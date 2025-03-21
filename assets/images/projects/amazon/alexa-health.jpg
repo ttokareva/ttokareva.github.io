@@ -1,0 +1,1035 @@
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+<!doctype html><html lang="en_US" class="a-no-js" data-19ax5a9jf="dingo">
+    
+
+
+
+
+
+
+
+
+
+ 
+
+
+    <head><script>var aPageStart = (new Date()).getTime();</script><meta charset="utf-8"/>
+        
+        
+            
+            
+                <title>404 Page not found</title>
+                
+            
+            
+        
+
+        
+        
+            
+            
+                
+            
+        
+
+        
+
+        
+        
+        
+        <link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/I/11EIQ5IGqaL._RC|01e5ncglxyL.css,01lF2n-pPaL.css,41Mdq8Sx7GL.css,31xg3iIZbKL.css,01IWMurvs8L.css,013z33uKh2L.css,01qPl4hxayL.css,01rhj7BIeEL.css,41EWOOlBJ9L.css,11TIuySqr6L.css,01ElnPiDxWL.css,11fJbvhE5HL.css,01Dm5eKVxwL.css,01IdKcBuAdL.css,01y-XAlI+2L.css,21F2Ja0FB-L.css,01oDR3IULNL.css,51PjmZTX66L.css,01XPHJk60-L.css,01S0vRENeAL.css,21IbH+SoKSL.css,11MrAKjcAKL.css,21fecG8pUzL.css,11a5wZbuKrL.css,01CFUgsA-YL.css,31pHA2U5D9L.css,116t+WD27UL.css,11gKCCKQV+L.css,11061HxnEvL.css,11oHt2HYxnL.css,01j2JE3j7aL.css,11JQtnL-6eL.css,21zZ8mQ5z6L.css,119XZIa6kjL.css,0114z6bAEoL.css,21uwtfqr5aL.css,11QyqG8yiqL.css,11K24eOJg4L.css,11F2+OBzLyL.css,01890+Vwk8L.css,01g+cOYAZgL.css,01cbS3UK11L.css,21F85am0yFL.css,01giMEP+djL.css_.css?AUIClients/AmazonUI#us.not-trident" />
+<link rel="stylesheet" href="https://images-na.ssl-images-amazon.com/images/I/71cTjwDJRNL.css?AUIClients/DeXWebsiteAUIAssets" />
+
+
+        
+        
+            
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="description" content="Try our search engine in the top right corner or check the links below." />
+                <meta name="keywords" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+            
+            
+        
+
+        
+        
+        
+        
+        
+        <meta name="google-site-verification" content="wfEDah_6uJe9Y7uIfLrVycd_efr8wQ9YO-fM_5MI5w0" />
+        
+        <meta name="google-site-verification" content="Eu8BqTWMhRRdfCAdqUh2RYb3SjAiuFp4wmgTtGcteM0" />
+        
+        
+        
+        <meta name="google-site-verification" content="KHmp6TUPKc1gHlM9TuB842pcV7TxZVV6TgenZtsYoNY" />
+        
+        <meta name="msvalidate.01" content="9761B379C1B64F587D71BA40337FDD07" />
+
+        <script language="JavaScript" type="text/javascript">
+
+        var digitalData ={
+            page:{
+                pageInfo: {
+                    pageInstanceID: "\/404",
+                    path: "\/sites\/default\/files\/styles\/blog_header\/public\/blog\-images\/alexa_healthcare_blog_header.png",
+                    pageID: "",
+                    pageTitle: "404 Page not found",
+                    pageType: "DeX",
+                    primaryCategory: "default",
+                    pageName: "",
+                    language: "en_US"
+                }
+            },
+            user:{
+                userID: "",
+                ipAddress: "34.21.105.242"
+            }
+        };
+        var urlSplit = "\/sites\/default\/files\/styles\/blog_header\/public\/blog\-images\/alexa_healthcare_blog_header.png".split("/");
+        var trailingSlash = urlSplit.pop();
+        var pTitle = trailingSlash;
+        if (trailingSlash == ""){
+            pTitle = urlSplit.pop()
+        }
+
+        
+        if ("".indexOf("search") !== -1) {
+            digitalData.page.pageInfo.searchResultsNum = "";
+        }
+
+        if ("".indexOf("dex-home") !== -1){
+            digitalData.page.pageInfo.pageID = "Home";
+            digitalData.page.pageInfo.pageTitle = "Home";
+            digitalData.page.pageInfo.primaryCategory = "Home";
+        } else {
+            digitalData.page.pageInfo.pageID = pTitle;
+            pTitle = pTitle.replace(/(^|-)[a-z]/g,function(f){return f.toUpperCase();});
+            pTitle = pTitle.replace(/-/g, '');
+            digitalData.page.pageInfo.pageTitle = pTitle;
+            var pCat = digitalData.page.pageInfo.primaryCategory;
+            pCat = pCat.replace(/(^|-)[a-z]/g,function(f){return f.toUpperCase();});
+            pCat = pCat.replace(/-/g, '');
+            digitalData.page.pageInfo.primaryCategory = pCat;
+        }
+
+        var pageNameStr = "" + digitalData.page.pageInfo.primaryCategory;
+        //Todo: add in logic for sub-categories when AOI is implemented.
+        if (digitalData.page.pageInfo.pageTitle != null){
+        	if (pageNameStr != ""){
+        		pageNameStr += ":";
+        	}
+            pageNameStr += digitalData.page.pageInfo.pageTitle;
+        }
+        digitalData.page.pageInfo.pageName = pageNameStr;
+
+        
+        (function (w) {
+           w.URLSearchParams = w.URLSearchParams || function (searchString) {
+               var self = this;
+               self.searchString = searchString;
+               self.get = function (name) {
+                   var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(self.searchString);
+                   if (results == null) {
+                       return null;
+                   }
+                   else {
+                       return decodeURI(results[1]) || 0;
+                   }
+               };
+           }
+        })(window);
+
+        </script>
+
+
+
+
+        <script src="https://m.media-amazon.com/images/G/01/envImprovement/js/jquery/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://ds6yc8t7pnx74.cloudfront.net/content/dam/developer-portal/analytics/prod/launch-EN968f8a7401fc4ccea43ced61e7b0c2bb.min.js" async></script>
+
+
+
+        
+            <link rel="stylesheet" type="text/css" href="https://d20632htc2msyc.cloudfront.net/static/css/main.css" />
+        
+        <script defer src="https://d20632htc2msyc.cloudfront.net/static/js/main.js"></script>
+        
+<script type="text/javascript">
+(function() {
+  var didInit = false;
+  function initMunchkin() {
+    if(didInit === false) {
+      didInit = true;
+      Munchkin.init('365-EFI-026');
+    }
+  }
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//munchkin.marketo.net/munchkin.js';
+  s.onreadystatechange = function() {
+    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+      initMunchkin();
+    }
+  };
+  s.onload = initMunchkin;
+  document.getElementsByTagName('head')[0].appendChild(s);
+})();
+</script>
+
+
+        
+        
+
+        
+    </head>
+
+
+    <body class="a-m-us a-aui_72554-c a-aui_a11y_1_699934-c a-aui_a11y_4_835613-c a-aui_a11y_6_837773-c a-aui_a11y_sr_678508-c a-aui_killswitch_csa_logger_372963-c a-aui_pci_risk_banner_210084-c a-aui_preload_261698-c a-aui_rel_noreferrer_noopener_309527-c a-aui_template_weblab_cache_333406-c a-aui_tnr_v2_180836-c"><div id="a-page"><script type="a-state" data-a-state="{&quot;key&quot;:&quot;a-wlab-states&quot;}">{"AUI_A11Y_6_837773":"C","AUI_TNR_V2_180836":"C","AUI_PRELOAD_261698":"C","AUI_TEMPLATE_WEBLAB_CACHE_333406":"C","AUI_72554":"C","AUI_A11Y_1_699934":"C","AUI_A11Y_4_835613":"C","AUI_KILLSWITCH_CSA_LOGGER_372963":"C","AUI_A11Y_SR_678508":"C","AUI_REL_NOREFERRER_NOOPENER_309527":"C","AUI_PCI_RISK_BANNER_210084":"C"}</script>
+        
+
+
+
+
+
+
+
+
+<header class='dpHeader dphThemedark'>
+    <div class='dphTopBar clearfix'>
+        <div class='dphLeft'>
+            <div class='dphMenuToggle'>
+                <i class='dphMenuIcon'></i>
+                <i class='dphMenuBackIcon'></i>
+            </div>
+            <a class='dphLogo' href='/'>
+                <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/logos/amazonDeveloperLogoDarkBG1x.png" 
+                     srcset="https://m.media-amazon.com/images/G/01/mobile-apps/dex/logos/amazonDeveloperLogoDarkBG1x.png 1x, https://m.media-amazon.com/images/G/01/mobile-apps/dex/logos/amazonDeveloperLogoDarkBG2x.png 2x" 
+                     alt="Amazon Developer Logo">
+            </a>
+        </div>
+        <div class='dphRight'>
+            
+
+
+
+
+<div class="dphSearchBarWrap">
+<!-- Used in tech docs to hide side bar search results when we rollout new search -->
+<script type="text/javascript">
+    window.newSearch = true;
+</script>
+<div hidden style="display: none;" class="new-search-flag" data-val="enabled"></div>
+
+    <div hidden style="display: none;" class="new-search-metadata">
+            {"settingsUrl":"https://ds6yc8t7pnx74.cloudfront.net/devportal-digital-assets/cf/developer-portal/getDeXSearchData"}
+    </div>
+
+<div id="dex-search-header-bar">
+
+</div>
+
+</div>
+
+
+            
+            
+                
+                
+                    <a href="/home.html" class='dphConsole dphLink'>Developer Console</a>
+                
+            
+
+            
+            
+
+
+
+
+
+
+
+    
+
+<div class='dphUserInfo'>
+    
+        
+            <a class="dphLink" href="/settings/console/registration?return_to=/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">Sign In</a>
+        
+        
+    
+</div>
+
+            
+            
+
+
+<style>
+    #notification-counter {
+        position: absolute;
+        top: 2px;
+        padding: 0 2px;
+        min-width: 20px;
+        background: #BF2727;
+        color: white;
+        font-size: 11px;
+        border-radius: 3px;
+        line-height: 20px;
+        text-align: center;
+    }
+    #notification_click_icon {
+        width: 32px;
+        height: 32px;
+        background-color: #31465f;
+        text-align: center;
+        line-height: 32px;
+        border-radius: 50%;
+        margin-right: 15px;
+        color: white;
+        font-weight: 300;
+        cursor: pointer;
+    }
+    #notification-placeholder {
+        position: absolute;
+        top:45px;
+    }
+    #notification_flyout_iframe_id {
+        display: none;
+        position: absolute;
+        width: 425px;
+        border: none;
+        transform: translate(-80%);
+        transition: all 0.2s;
+    }
+
+    @media screen and (max-width: 992px) {
+        #notification_click_icon {
+            position: fixed;
+            display: inline-block;
+            right: 44px;
+        }
+        #notification_click_icon ~ .dphSearch.active {
+            position: relative;
+            z-index: 0;
+        }
+        #notification-placeholder {
+            top:28px;
+        }
+        #notification-counter {
+            top: -6px;
+        }
+    }
+
+    @media screen and (max-width: 414px) {
+        #notification_flyout_iframe_id {
+            transform: none;
+            right: -99px;
+            width: 100vw;
+        }
+        #notification_click_icon ~ .dphSearch.active {
+            position: relative;
+            z-index: 0;
+        }
+    }
+</style>
+
+
+
+
+
+
+            
+            
+                
+                
+                
+                
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<div id='navFlyout?' class='dphFlyoutItem dphDevConsoleLinkTopBar dphButton'>
+    <span class='dphConsole dphLink'>?</span>
+    <div class='dphDropdownWrap'>
+        <nav class='dphDropdown accrItem'>
+            <div class='dpIconArrow accrHandle'></div>
+            
+            
+            
+                
+                    <ul class='dphDropdownList'>
+                        <li class='dphdItem'><a href='/support/'>Support</a></li>
+                        <li class='dphdItem'><a href='/documentation/'>Docs</a></li>
+                        <li class='dphdItem'><a href='/support/contact-us'>Contact Us</a></li>
+                        <li class='dphdItem'><a href='/support/cases'>My Appstore Cases</a></li>
+                    </ul>
+                
+            
+        </nav>
+    </div>
+</div>
+
+                
+            
+
+        </div>
+    </div>
+
+    <div class='dphNavigation accordion' data-accr_active_width='327'>
+        <div class='dphnWrap'>
+            
+
+
+
+
+
+
+
+    
+
+<div class='dphUserInfo'>
+    
+        
+            <a class="dphLink" href="/settings/console/registration?return_to=/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">Sign In</a>
+        
+        
+    
+</div>
+            
+
+
+
+
+
+
+    
+    
+        <a href="/home.html" class='dphConsole dphLink'>Developer Console</a>
+    
+
+            
+
+
+
+
+
+<nav class="dpPrimaryNav">
+    <ul class="dppnItems">
+        
+            
+                
+                    
+                    
+                    
+                        
+                    
+                
+                <li class="dppnItem  accrItem">
+                    
+                        
+                            <a href="/alexa" class="dppnLink">
+                                Alexa
+                            </a>
+                        
+                        
+                    
+                    
+                </li>        
+            
+        
+            
+                
+                    
+                    
+                    
+                        
+                    
+                
+                <li class="dppnItem  accrItem">
+                    
+                        
+                            <a href="/apps-and-games/console/apps/list.html" class="dppnLink">
+                                Amazon Appstore
+                            </a>
+                        
+                        
+                    
+                    
+                </li>        
+            
+        
+            
+                
+                    
+                    
+                    
+                        
+                    
+                
+                <li class="dppnItem  accrItem">
+                    
+                        
+                            <a href="/dash-replenishment-service" class="dppnLink">
+                                Dash Services
+                            </a>
+                        
+                        
+                    
+                    
+                </li>        
+            
+        
+            
+                
+                    
+                    
+                    
+                        
+                    
+                
+                <li class="dppnItem  accrItem">
+                    
+                        
+                            <a href="/login-with-amazon" class="dppnLink">
+                                Login With Amazon
+                            </a>
+                        
+                        
+                    
+                    
+                </li>        
+            
+        
+            
+                
+                    
+                    
+                    
+                        
+                    
+                
+                <li class="dppnItem  accrItem">
+                    
+                        
+                            <a href="https://aws.amazon.com/" class="dppnLink">
+                                AWS
+                            </a>
+                        
+                        
+                    
+                    
+                </li>        
+            
+        
+    </ul>
+</nav>
+            
+            
+                
+                
+                    
+
+
+
+
+
+
+
+<nav class="dpPrimaryNav dphDevConsoleLinkNavBar">
+    <ul class="dppnItems">
+        <li class="dppnItem accrItem">
+            <span class='dppnLink'>Support</span>
+            <div class="dpIconArrow accrHandle"></div>
+            <div class="dppnFlyoutWrap">
+                <div class="dppnSecondaryNavWrap">
+                    <ul class='dppnFlyout dppnSecondaryNav'>
+                        
+                        
+                            
+                                <li class='dppnfItem accrItem'><a class="dppnfLink" href='/support/'><span class="dppnfTitle">Support</span></a></li>
+                                <li class='dppnfItem accrItem'><a class="dppnfLink" href='/documentation/'><span class="dppnfTitle">Docs</span></a></li>
+                                <li class='dppnfItem accrItem'><a class="dppnfLink" href='/support/contact-us'><span class="dppnfTitle">Contact Us</span></a></li>
+                                <li class='dppnfItem accrItem'><a class="dppnfLink" href='/support/cases'><span class="dppnfTitle">My Appstore Cases</span></a></li>
+                            
+                        
+                    </ul>
+                </div>
+            </div>
+        </li>
+    </ul>
+</nav>
+                
+            
+        </div>
+    </div>
+</header>
+<div id='dpHeaderPlaceholder'></div>
+
+
+<script>
+    (function(){
+        //Set placeholder height as soon as possible to eliminate page jump
+        "use strict";
+
+        var setHeaderPlaceholderHeight = function(header){
+            var placeholder = document.getElementById('dpHeaderPlaceholder');
+            var headerHeight = header[0].offsetHeight + "px";
+            placeholder.style.height = headerHeight;
+        }
+
+        var checkForHeader = function(){
+            var header = document.querySelectorAll('.dpHeader');
+            if(header.length){
+                setHeaderPlaceholderHeight(header);
+                window.clearInterval(checkForHeaderInterval);
+            }
+        }
+
+        var checkForHeaderInterval = window.setInterval(checkForHeader, 10);
+        checkForHeader();   //Run once immediately
+    }());
+</script>
+        <script>
+(function(b,a,c,d){if((b=b.AmazonUIPageJS||b.P)&&b.when&&b.register){c=[];for(a=a.currentScript;a;a=a.parentElement)a.id&&c.push(a.id);return b.log("A copy of P has already been loaded on this page.","FATAL",c.join(" "))}})(window,document,Date);(function(a,b,c,d){"use strict";a._pSetI=function(){return null}})(window,document,Date);(function(d,G,I,J){"use strict";d._sw=function(){var p;return function(w,e,u,z,h,A,q,k,x,B){p||(p=!0,B.execute("RetailPageServiceWorker",function(){function y(a,b){g.controller&&a?(a={feature:"retail_service_worker_messaging",command:a},b&&(a.data=b),g.controller.postMessage(a)):a&&h("sw:sw_message_no_ctrl",1)}function p(a){var b=a.data;if(b&&"retail_service_worker_messaging"===b.feature&&b.command&&b.data){var c=b.data;a=d.ue;var f=d.ueLogError;switch(b.command){case "log_counter":a&&k(a.count)&&
+c.name&&a.count(c.name,0===c.value?0:c.value||1);break;case "log_tag":a&&k(a.tag)&&c.tag&&(a.tag(c.tag),b=d.uex,a.isl&&k(b)&&b("at"));break;case "log_error":f&&k(f)&&c.message&&f({message:c.message,logLevel:c.level||"ERROR",attribution:c.attribution||"RetailServiceWorker"});break;case "log_weblab_trigger":if(!c.weblab||!c.treatment)break;a&&k(a.trigger)?a.trigger(c.weblab,c.treatment):(h("sw:wt:miss"),h("sw:wt:miss:"+c.weblab+":"+c.treatment));break;default:h("sw:unsupported_message_command",1)}}}
+function v(a,b){return"sw:"+(b||"")+":"+a+":"}function C(){l.forEach(function(a){q(a)})}function n(a){return a.capabilities.isAmazonApp&&a.capabilities.android}function D(a,b,c){if(b)if(b.mshop&&n(a))a=v(c,"mshop_and"),b=b.mshop.action,l.push(a+"supported"),b(a,c);else if(b.browser){a=u(/Chrome/i)&&!u(/Edge/i)&&!u(/OPR/i)&&!a.capabilities.isAmazonApp&&!u(new RegExp(z+"bwv"+z+"b"));var f=b.browser;b=v(c,"browser");a?(a=f.action,l.push(b+"supported"),a(b,c)):l.push(b+"unsupported")}}function E(a,b,
+c){a&&l.push(v("register",c)+"unsupported");b&&l.push(v("unregister",c)+"unsupported");C()}try{var g=navigator.serviceWorker}catch(a){q("sw:nav_err")}(function(){if(g){var a=function(){y("page_loaded",{rid:d.ue_id,mid:d.ue_mid,pty:d.ue_pty,sid:d.ue_sid,spty:d.ue_spty,furl:d.ue_furl})};x(g,"message",p);y("client_messaging_ready");B.when("load").execute(a);x(g,"controllerchange",function(){y("client_messaging_ready");"complete"===G.readyState&&a()})}})();var l=[],m=function(a,b){var c=d.uex,f=d.uet;
+a=e(":","aui","sw",a);"ld"===b&&k(c)?c("ld",a,{wb:1}):k(f)&&f(b,a,{wb:1})},H=function(a,b,c){function f(a){b&&k(b.failure)&&b.failure(a)}function F(){l=setTimeout(function(){q(e(":","sw:"+r,t.TIMED_OUT));f({ok:!1,statusCode:t.TIMED_OUT,done:!1});m(r,"ld")},c||4E3)}var t={NO_CONTROLLER:"no_ctrl",TIMED_OUT:"timed_out",UNSUPPORTED_BROWSER:"unsupported_browser",UNEXPECTED_RESPONSE:"unexpected_response"},r=e(":",a.feature,a.command),l,n=!0;if("MessageChannel"in d&&g&&"controller"in g)if(g.controller){var p=
+new MessageChannel;p.port1.onmessage=function(c){(c=c.data)&&c.feature===a.feature&&c.command===a.command?(n&&(m(r,"cf"),n=!1),m(r,"af"),clearTimeout(l),c.done||F(),c.ok?b&&k(b.success)&&b.success(c):f(c),c.done&&m(r,"ld")):h(e(":","sw:"+r,t.UNEXPECTED_RESPONSE),1)};F();m(r,"bb");g.controller.postMessage(a,[p.port2])}else q(e(":","sw:"+a.feature,t.NO_CONTROLLER)),f({ok:!1,statusCode:t.NO_CONTROLLER,done:!0});else q(e(":","sw:"+a.feature,t.UNSUPPORTED_BROWSER)),f({ok:!1,statusCode:t.UNSUPPORTED_BROWSER,
+done:!0})};(function(){g?(m("ctrl_changed","bb"),g.addEventListener("controllerchange",function(){q("sw:ctrl_changed");m("ctrl_changed","ld")})):h(e(":","sw:ctrl_changed","sw_unsupp"),1)})();(function(){var a=function(){m(b,"ld");var a=d.uex;H({feature:"page_proxy",command:"request_feature_tags"},{success:function(b){b=b.data;Array.isArray(b)&&b.forEach(function(a){"string"===typeof a?q(e(":","sw:ppft",a)):h(e(":","sw:ppft","invalid_tag"),1)});h(e(":","sw:ppft","success"),1);A&&A.isl&&k(a)&&a("at")},
+failure:function(a){h(e(":","sw:ppft","error:"+(a.statusCode||"ppft_error")),1)}})};if("requestIdleCallback"in d){var b=e(":","ppft","callback_ricb");d.requestIdleCallback(a,{timeout:1E3})}else b=e(":","ppft","callback_timeout"),setTimeout(a,0);m(b,"bb")})();(function(a){var b=a.reg,c=a.unreg;g&&g.getRegistrations?(w.when("A").execute(function(b){if((a.reg.mshop||a.unreg.mshop)&&"function"===typeof n&&n(b)){var f=a.reg.mshop?"T1":"C",e=d.ue;e&&e.trigger?e.trigger("MSHOP_SW_CLIENT_446196",f):h("sw:mshop:wt:failed")}D(b,
+c,"unregister")}),x(d,"load",function(){w.when("A").execute(function(a){D(a,b,"register");C()})})):(E(b&&b.browser,c&&c.browser,"browser"),w.when("A").execute(function(a){"function"===typeof n&&n(a)&&E(b&&b.mshop,c&&c.mshop,"mshop_and")}))})({reg:{},unreg:{}})}))}}()})(window,document,Date);(function(c,e,I,B){"use strict";c._pd=function(){var a,u;return function(C,f,h,k,b,D,v,E,F){function w(d){try{return d()}catch(J){return!1}}function l(){if(m){var d={w:c.innerWidth||b.clientWidth,h:c.innerHeight||b.clientHeight};5<Math.abs(d.w-q.w)||50<d.h-q.h?(q=d,n=4,(d=a.mobile||a.tablet?450<d.w&&d.w>d.h:1250<=d.w)?k(b,"a-ws"):b.className=v(b,"a-ws")):0<n&&(n--,x=setTimeout(l,16))}}function G(d){(m=d===B?!m:!!d)&&l()}function H(){return m}if(!u){u=!0;var r=function(){var d=["O","ms","Moz","Webkit"],
+c=e.createElement("div");return{testGradients:function(){return!0},test:function(a){var b=a.charAt(0).toUpperCase()+a.substr(1);a=(d.join(b+" ")+b+" "+a).split(" ");for(b=a.length;b--;)if(""===c.style[a[b]])return!0;return!1},testTransform3d:function(){return!0}}}(),y=b.className,z=/(^| )a-mobile( |$)/.test(y),A=/(^| )a-tablet( |$)/.test(y);a={audio:function(){return!!e.createElement("audio").canPlayType},video:function(){return!!e.createElement("video").canPlayType},canvas:function(){return!!e.createElement("canvas").getContext},
+svg:function(){return!!e.createElementNS&&!!e.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect},offline:function(){return navigator.hasOwnProperty&&navigator.hasOwnProperty("onLine")&&navigator.onLine},dragDrop:function(){return"draggable"in e.createElement("span")},geolocation:function(){return!!navigator.geolocation},history:function(){return!(!c.history||!c.history.pushState)},webworker:function(){return!!c.Worker},autofocus:function(){return"autofocus"in e.createElement("input")},
+inputPlaceholder:function(){return"placeholder"in e.createElement("input")},textareaPlaceholder:function(){return"placeholder"in e.createElement("textarea")},localStorage:function(){return"localStorage"in c&&null!==c.localStorage},orientation:function(){return"orientation"in c},touch:function(){return"ontouchend"in e},gradients:function(){return r.testGradients()},hires:function(){var a=c.devicePixelRatio&&1.5<=c.devicePixelRatio||c.matchMedia&&c.matchMedia("(min-resolution:144dpi)").matches;E("hiRes"+
+(z?"Mobile":A?"Tablet":"Desktop"),a?1:0);return a},transform3d:function(){return r.testTransform3d()},touchScrolling:function(){return f(/Windowshop|android|OS ([5-9]|[1-9][0-9]+)(_[0-9]{1,2})+ like Mac OS X|SOFTWARE=([5-9]|[1-9][0-9]+)(.[0-9]{1,2})+.*DEVICE=iPhone|Chrome|Silk|Firefox|Trident.+?; Touch/i)},ios:function(){return f(/OS [1-9][0-9]*(_[0-9]*)+ like Mac OS X/i)&&!f(/trident|Edge/i)},android:function(){return f(/android.([1-9]|[L-Z])/i)&&!f(/trident|Edge/i)},mobile:function(){return z},
+tablet:function(){return A},rtl:function(){return"rtl"===b.dir}};for(var g in a)a.hasOwnProperty(g)&&(a[g]=w(a[g]));for(var t="textShadow textStroke boxShadow borderRadius borderImage opacity transform transition".split(" "),p=0;p<t.length;p++)a[t[p]]=w(function(){return r.test(t[p])});var m=!0,x=0,q={w:0,h:0},n=4;l();h(c,"resize",function(){clearTimeout(x);n=4;l()});b.className=v(b,"a-no-js");k(b,"a-js");!f(/OS [1-8](_[0-9]*)+ like Mac OS X/i)||c.navigator.standalone||f(/safari/i)||k(b,"a-ember");
+h=[];for(g in a)a.hasOwnProperty(g)&&a[g]&&h.push("a-"+g.replace(/([A-Z])/g,function(a){return"-"+a.toLowerCase()}));k(b,h.join(" "));b.setAttribute("data-aui-build-date",F);C.register("p-detect",function(){return{capabilities:a,localStorage:a.localStorage&&D,toggleResponsiveGrid:G,responsiveGridEnabled:H}});return a||{}}}}()})(window,document,Date);(function(g,l,C,D){function E(a){n&&n.tag&&n.tag(p(":","aui",a))}function m(a,b){n&&n.count&&n.count("aui:"+a,0===b?0:b||(n.count("aui:"+a)||0)+1)}function F(a){try{return a.test(navigator.userAgent)}catch(b){return!1}}function G(a){return"function"===typeof a}function u(a,b,c){a.addEventListener?a.addEventListener(b,c,!1):a.attachEvent&&a.attachEvent("on"+b,c)}function p(a,b,c,f){b=b&&c?b+a+c:b||c;return f?p(a,b,f):b}function y(a,b,c){try{Object.defineProperty(a,b,{value:c,writable:!1})}catch(f){a[b]=
+c}return c}function O(a,b){a.className=P(a,b)+" "+b}function P(a,b){return(" "+a.className+" ").split(" "+b+" ").join(" ").replace(/^ | $/g,"")}function ca(a,b,c){var f=c=a.length,e=function(){f--||(H.push(b),I||(q?q.set(z):setTimeout(z,0),I=!0))};for(e();c--;)Q[a[c]]?e():(v[a[c]]=v[a[c]]||[]).push(e)}function da(a,b,c,f,e){var d=l.createElement(a?"script":"link");u(d,"error",f);e&&u(d,"load",e);a?(d.type="text/javascript",d.async=!0,c&&/AUIClients|images[/]I/.test(b)&&d.setAttribute("crossorigin",
+"anonymous"),d.src=b):(d.rel="stylesheet",d.href=b);l.getElementsByTagName("head")[0].appendChild(d)}function R(a,b){return function(c,f){function e(){da(b,c,d,function(b){J?m("resource_unload"):d?(d=!1,m("resource_retry"),e()):(m("resource_error"),a.log("Asset failed to load: "+c));b&&b.stopPropagation?b.stopPropagation():g.event&&(g.event.cancelBubble=!0)},f)}if(S[c])return!1;S[c]=!0;m("resource_count");var d=!0;return!e()}}function ea(a,b,c){for(var f={name:a,guard:function(c){return b.guardFatal(a,
+c)},guardTime:function(a){return b.guardTime(a)},logError:function(c,d,e){b.logError(c,d,e,a)}},e=[],d=0;d<c.length;d++)A.hasOwnProperty(c[d])&&(e[d]=K.hasOwnProperty(c[d])?K[c[d]](A[c[d]],f):A[c[d]]);return e}function w(a,b,c,f,e){return function(d,k){function n(){var a=null;f?a=k:G(k)&&(q.start=r(),a=k.apply(g,ea(d,h,l)),q.end=r());if(b){A[d]=a;a=d;for(Q[a]=!0;(v[a]||[]).length;)v[a].shift()();delete v[a]}q.done=!0}var h=e||this;G(d)&&(k=d,d=D);b&&(d=d?d.replace(T,""):"__NONAME__",L.hasOwnProperty(d)&&
+h.error(p(", reregistered by ",p(" by ",d+" already registered",L[d]),h.attribution),d),L[d]=h.attribution);for(var l=[],m=0;m<a.length;m++)l[m]=a[m].replace(T,"");var q=x[d||"anon"+ ++fa]={depend:l,registered:r(),namespace:h.namespace};d&&ha.hasOwnProperty(d);c?n():ca(l,h.guardFatal(d,n),d);return{decorate:function(a){K[d]=h.guardFatal(d,a)}}}}function U(a){return function(){var b=Array.prototype.slice.call(arguments);return{execute:w(b,!1,a,!1,this),register:w(b,!0,a,!1,this)}}}function M(a,b){return function(c,
+f){f||(f=c,c=D);var e=this.attribution;return function(){h.push(b||{attribution:e,name:c,logLevel:a});var d=f.apply(this,arguments);h.pop();return d}}}function B(a,b){this.load={js:R(this,!0),css:R(this)};y(this,"namespace",b);y(this,"attribution",a)}function V(){l.body?k.trigger("a-bodyBegin"):setTimeout(V,20)}"use strict";var t=C.now=C.now||function(){return+new C},r=function(a){return a&&a.now?a.now.bind(a):t}(g.performance),ia=r(),ha={},n=g.ue;E();E("aui_build_date:3.24.1-2024-12-05");var W={getItem:function(a){try{return g.localStorage.getItem(a)}catch(b){}},
+setItem:function(a,b){try{return g.localStorage.setItem(a,b)}catch(c){}}},q=g._pSetI(),H=[],ja=[],I=!1,ka=navigator.scheduling&&"function"===typeof navigator.scheduling.isInputPending;var z=function(){for(var a=q?q.set(z):setTimeout(z,0),b=t();ja.length||H.length;)if(H.shift()(),q&&ka){if(150<t()-b&&!navigator.scheduling.isInputPending()||50<t()-b&&navigator.scheduling.isInputPending())return}else if(50<t()-b)return;q?q.clear(a):clearTimeout(a);I=!1};var Q={},v={},S={},J=!1;u(g,"beforeunload",function(){J=
+!0;setTimeout(function(){J=!1},1E4)});var T=/^prv:/,L={},A={},K={},x={},fa=0,X=String.fromCharCode(92),h=[],Y=!0,Z=g.onerror;g.onerror=function(a,b,c,f,e){e&&"object"===typeof e||(e=Error(a,b,c),e.columnNumber=f,e.stack=b||c||f?p(X,e.message,"at "+p(":",b,c,f)):D);var d=h.pop()||{};e.attribution=p(":",e.attribution||d.attribution,d.name);e.logLevel=d.logLevel;e.attribution&&console&&console.log&&console.log([e.logLevel||"ERROR",a,"thrown by",e.attribution].join(" "));h=[];Z&&(d=[].slice.call(arguments),
+d[4]=e,Z.apply(g,d))};B.prototype={logError:function(a,b,c,f){b={message:b,logLevel:c||"ERROR",attribution:p(":",this.attribution,f)};if(g.ueLogError)return g.ueLogError(a||b,a?b:null),!0;console&&console.error&&(console.log(b),console.error(a));return!1},error:function(a,b,c,f){a=Error(p(":",f,a,c));a.attribution=p(":",this.attribution,b);throw a;},guardError:M(),guardFatal:M("FATAL"),guardCurrent:function(a){var b=h[h.length-1];return b?M(b.logLevel,b).call(this,a):a},guardTime:function(a){var b=
+h[h.length-1],c=b&&b.name;return c&&c in x?function(){var b=r(),e=a.apply(this,arguments);x[c].async=(x[c].async||0)+r()-b;return e}:a},log:function(a,b,c){return this.logError(null,a,b,c)},declare:w([],!0,!0,!0),register:w([],!0),execute:w([]),AUI_BUILD_DATE:"3.24.1-2024-12-05",when:U(),now:U(!0),trigger:function(a,b,c){var f=t();this.declare(a,{data:b,pageElapsedTime:f-(g.aPageStart||NaN),triggerTime:f});c&&c.instrument&&N.when("prv:a-logTrigger").execute(function(b){b(a)})},handleTriggers:function(){this.log("handleTriggers deprecated")},
+attributeErrors:function(a){return new B(a)},_namespace:function(a,b){return new B(a,b)},setPriority:function(a){Y?Y=!1:this.log("setPriority only accept the first call.")}};var k=y(g,"AmazonUIPageJS",new B);var N=k._namespace("PageJS","AmazonUI");N.declare("prv:p-debug",x);k.declare("p-recorder-events",[]);k.declare("p-recorder-stop",function(){});y(g,"P",k);V();if(l.addEventListener){var aa;l.addEventListener("DOMContentLoaded",aa=function(){k.trigger("a-domready");l.removeEventListener("DOMContentLoaded",
+aa,!1)},!1)}var ba=l.documentElement,la=g._pd(k,F,u,O,ba,W,P,m,"3.24.1-2024-12-05");F(/UCBrowser/i)||la.localStorage&&O(ba,W.getItem("a-font-class"));k.declare("a-event-revised-handling",!1);g._sw(N,p,F,X,m,n,E,G,u,k);k.declare("a-fix-event-off",!1);m("pagejs:pkgExecTime",r()-ia)})(window,document,Date);
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/61ZS63EQSsL._RC|11Y+5x+kkTL.js,51RBtQqsEML.js,11yKORv-GTL.js,11GgN1+C7hL.js,01+z+uIeJ-L.js,01VRMV3FBdL.js,21BJeD9yjcL.js,01cS+tLhj4L.js,11rRjDLdAVL.js,51UOrPXYGsL.js,11YA5PIFcPL.js,11UNP9ncXuL.js,1174TO1N7GL.js,11EWRk6r74L.js,21paGe30x-L.js,01490L6yBnL.js,51nBtdyQGcL.js,01JYHc2oIlL.js,31nfKXylf6L.js,01ezj5Rkz1L.js,11bEz2VIYrL.js,31o2NGTXThL.js,01rpauTep4L.js,01RMmNcPMuL.js_.js?AUIClients/AmazonUI');
+  (window.AmazonUIPageJS ? AmazonUIPageJS : P).load.js('https://images-na.ssl-images-amazon.com/images/I/616qGtYUw7L.js?AUIClients/DeXWebsiteAUIAssets');
+</script>
+
+        <div class="error"/>
+            <div class="content-section">
+                <div class="error-title">
+                    404 Page not found
+                </div>
+                <div class="error-description">
+                    Try our search engine in the top right corner or check the links below.
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+        
+
+
+
+
+<section class="dp-content-slot dp-content-pixel-tracker-slot">
+  <div class="dp-content-slot-inner container">
+    
+  </div>
+</section>
+        
+
+
+
+
+
+
+
+<footer class='dpFooter'>
+    <a class='dpfBackToTopLink' href='#'>Back to top</a>
+
+    <nav class="dpfNav accordion clearfix">
+        <div class='dpfWidth'>
+            <div class='dpfnHideRightMargin'>
+                
+                    
+                        
+                        <div class='dpfnColWrap'>
+                    
+                        <div class="dpfnCol">
+                            
+                                <div class="dpfnGroup accrItem">
+                                    <div class='dpIconArrow accrHandle'></div>
+                                    
+                                        
+                                        
+                                            <h3>Legal</h3>
+                                        
+                                    
+                                    <ul>
+                                        
+                                            <li><a href="/appsandservices/support/legal/da">Agreements and Terms</a></li>
+                                        
+                                            <li><a href="/public/support/legal/tou">Amazon Developers Service Portal Terms of Use</a></li>
+                                        
+                                            <li><a href="/appsandservices/support/pml.html">Program Materials License Agreement</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            
+                        </div>
+                    
+                
+                    
+                        <div class="dpfnCol">
+                            
+                                <div class="dpfnGroup accrItem">
+                                    <div class='dpIconArrow accrHandle'></div>
+                                    
+                                        
+                                            <h3><a href="https://developer.amazon.com/apps-and-games">Amazon Appstore</a></h3>
+                                        
+                                        
+                                    
+                                    <ul>
+                                        
+                                            <li><a href="/apps-and-games/fire-tv">Amazon Fire TV</a></li>
+                                        
+                                            <li><a href="/apps-and-games/fire-tablets">Fire Tablets</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            
+                                <div class="dpfnGroup accrItem">
+                                    <div class='dpIconArrow accrHandle'></div>
+                                    
+                                        
+                                            <h3><a href="https://developer.amazon.com/alexa">Alexa</a></h3>
+                                        
+                                        
+                                    
+                                    <ul>
+                                        
+                                            <li><a href="https://developer.amazon.com/alexa-skills-kit">Alexa Skills Kit</a></li>
+                                        
+                                            <li><a href="https://developer.amazon.com/alexa-voice-service">Alexa Voice Service</a></li>
+                                        
+                                            <li><a href="https://developer.amazon.com/alexa-fund">Alexa Fund</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            
+                        </div>
+                    
+                        
+                        </div>
+                    
+                
+                    
+                        
+                        <div class='dpfnColWrap'>
+                    
+                        <div class="dpfnCol">
+                            
+                                <div class="dpfnGroup accrItem">
+                                    <div class='dpIconArrow accrHandle'></div>
+                                    
+                                        
+                                        
+                                            <h3>Other services & APIs</h3>
+                                        
+                                    
+                                    <ul>
+                                        
+                                            <li><a href="https://developer.amazon.com/apps-and-games/login-with-amazon">Login with Amazon</a></li>
+                                        
+                                            <li><a href="/docs/amazon-data-portability/overview.html">Amazon Data Portability</a></li>
+                                        
+                                            <li><a href="https://developer.amazon.com/apps-and-games/merch">Amazon Merch on Demand</a></li>
+                                        
+                                            <li><a href="https://developer.amazon.com/frustration-free-setup">Frustration-Free Setup</a></li>
+                                        
+                                            <li><a href="/incentives-api">Amazon Incentives API</a></li>
+                                        
+                                            <li><a href="/docs/music/landing_home.html">Amazon Music</a></li>
+                                        
+                                            <li><a href="/docs/physicalstores/welcome.html">Just Walk Out technology by Amazon</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            
+                        </div>
+                    
+                
+                    
+                        <div class="dpfnCol">
+                            
+                                <div class="dpfnGroup accrItem">
+                                    <div class='dpIconArrow accrHandle'></div>
+                                    
+                                        
+                                        
+                                            <h3>Blogs</h3>
+                                        
+                                    
+                                    <ul>
+                                        
+                                            <li><a href="https://developer.amazon.com/apps-and-games/blogs">Appstore Developer Blog</a></li>
+                                        
+                                            <li><a href="https://developer.amazon.com/en-US/blogs/alexa">Alexa Developer Blogs</a></li>
+                                        
+                                            <li><a href="https://www.amazon.science/tag/alexa">Alexa Science Blog</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            
+                                <div class="dpfnGroup accrItem">
+                                    <div class='dpIconArrow accrHandle'></div>
+                                    
+                                        
+                                        
+                                            <h3>Support</h3>
+                                        
+                                    
+                                    <ul>
+                                        
+                                            <li><a href="/support/">Amazon Developer Support</a></li>
+                                        
+                                            <li><a href="https://community.amazondeveloper.com/">Appstore Developer Community</a></li>
+                                        
+                                            <li><a href="https://stackoverflow.com/tags/alexa-skills-kit">Alexa Skills Community</a></li>
+                                        
+                                            <li><a href="/docs/app-submission/faq-landing.html">FAQs</a></li>
+                                        
+                                    </ul>
+                                </div>
+                            
+                        </div>
+                    
+                        
+                        </div>
+                    
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="dpfSocialLocal clearfix">
+        <div class='dpfWidth'>
+            <div class='dpfLocale'>
+                
+
+
+
+<nav class="dpLangSwitcher dpsfFlyout">
+    <span class='dplsTitle'>Language</span>
+    <div class='dplsSwitch'>
+        <span class="dplsCurrent dpsfFlyoutCurrent">
+            <i class='dpsfIcon dpsfIconGlobe'></i>
+            English
+        </span>
+        <div class='dplsOptionsWrap dpsfFlyoutWrap'>
+            <ul class="dplsOptions dpsfFlyoutContent">
+                
+                    
+                    
+                        
+                    
+                    <li class="dplsOption dpsfFlyoutItem dplsOptionActive">
+                        <a data-locale="en_US" href="/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">
+                            English
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="dplsOption dpsfFlyoutItem ">
+                        <a data-locale="zh_CN" href="/zh/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">
+                            Chinese (中文)
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="dplsOption dpsfFlyoutItem ">
+                        <a data-locale="ja_JP" href="/ja/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">
+                            Japanese (日本語)
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="dplsOption dpsfFlyoutItem ">
+                        <a data-locale="de_DE" href="/de/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">
+                            German (Deutsch)
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="dplsOption dpsfFlyoutItem ">
+                        <a data-locale="fr_FR" href="/fr/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">
+                            French (Français)
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="dplsOption dpsfFlyoutItem ">
+                        <a data-locale="it_IT" href="/it/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">
+                            Italian (Italiano)
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="dplsOption dpsfFlyoutItem ">
+                        <a data-locale="es_ES" href="/es/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">
+                            Spanish (España)
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="dplsOption dpsfFlyoutItem ">
+                        <a data-locale="es_MX" href="/es-mx/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">
+                            Spanish (México)
+                        </a>
+                    </li>
+                
+                    
+                    
+                    <li class="dplsOption dpsfFlyoutItem ">
+                        <a data-locale="pt_BR" href="/pt-br/sites/default/files/styles/blog_header/public/blog-images/alexa_healthcare_blog_header.png">
+                            Portuguese (Brasil)
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+            </div>
+            <div class="dpfSocial">
+                <span class="dpfSocialTitle">
+                    Follow Us:
+                </span>
+                
+                    <a href="https://www.youtube.com/channel/UCT9ApARFgQJOeqD-ygmxnJQ">
+                        <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/logo-youtube.png" alt="youtube_icon"/>
+                    </a>
+                
+                    <a href="https://www.linkedin.com/showcase/amazon-appstore-developers">
+                        <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/logo_linkedin._CB1704305834_.png" alt="linkedin_icon"/>
+                    </a>
+                
+                    <a href="https://www.twitter.com/AmazonAppDev">
+                        <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/logo_X.png" alt="X_icon"/>
+                    </a>
+                
+                    <a href="https://www.facebook.com/AmazonAppDev">
+                        <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/logo_facebook02.png" alt="facebook_icon"/>
+                    </a>
+                
+                    <a href="/apps-and-games/blog">
+                        <img src="https://images-na.ssl-images-amazon.com/images/G/01/mobile-apps/dex/logo-blog._V290989945_.png" alt="blog_icon"/>
+                    </a>
+                
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+<div class="dpfAreaOfInterest dpsfFlyout">
+    <span class='dpfaCurrent'>
+        <i class='dpsfIcon dpsfIconDots'></i>
+    </span>
+    <div class="dpfWidth dpsfFlyoutWrap">
+        <div class="dpfaItems dpsfFlyoutContent">
+            <h3><hza:string id="area_of_interest_title" /></h3>
+            
+                <div class="dpfaItem dpsfFlyoutItem">
+                    <a href="/alexa">
+                        <span class='dpfaiText'>Alexa</span>
+                        <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/platform-logos/white/Alexalogoheaderwhite._V506548913_.png" alt="Alexa" />
+                    </a>
+                </div>
+            
+                <div class="dpfaItem dpsfFlyoutItem">
+                    <a href="/apps-and-games">
+                        <span class='dpfaiText'>Amazon Appstore</span>
+                        <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/platform-logos/white/Appstorelogowhite.png" alt="Amazon Appstore" />
+                    </a>
+                </div>
+            
+                <div class="dpfaItem dpsfFlyoutItem">
+                    <a href="https://aws.amazon.com">
+                        <span class='dpfaiText'>Amazon Web Services</span>
+                        <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/platform-logos/white/AWS_logo_RGB_WHT._CB1506540482_.png" alt="Amazon Web Services" />
+                    </a>
+                </div>
+            
+        </div>
+    </div>
+</div>
+
+    <div class="dpfCopyright">
+        © 2010-2025, Amazon.com, Inc. or its affiliates. All Rights Reserved.
+    </div>
+</footer>
+        
+    </div></body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe sandbox src="https://www.googletagmanager.com/ns.html?id=GTM-5LVXJD4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</html>
