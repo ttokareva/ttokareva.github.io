@@ -1,982 +1,1384 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Portfolio | Software Engineer & Technology Consultant</title>
-    <meta name="description" content="Portfolio of a skilled software engineer, web developer, and technology consultant showcasing projects and expertise.">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tatiana Tokareva — Technology Consultant</title>
+  <meta name="description" content="Independent technology consultant with 15 years of experience. Former Amazon/Alexa engineer. Expert in system architecture, healthcare tech, voice AI, and people-first technology strategy." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <style>
+    /* ============================================================
+       DESIGN SYSTEM — Quiet Luxury Modernism
+       Primary: Deep Forest Green #2D5A4A | Accent: Warm Amber #C4884A
+       Background: Warm Parchment #F8F6F1 | Foreground: #1C1C1A
+       Fonts: Cormorant Garamond (display) | Outfit (body) | JetBrains Mono (labels)
+       Philosophy: Sophisticated, calm authority with human warmth
+    ============================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #F8F6F1;
+      --bg-warm:     #F2EEE6;
+      --bg-dark:     #1A2820;
+      --fg:          #1C1C1A;
+      --fg-muted:    #5A5850;
+      --fg-light:    #9A9488;
+      --green:       #2D5A4A;
+      --green-light: #3D7A62;
+      --green-dark:  #1E3D31;
+      --amber:       #C4884A;
+      --amber-light: #D9A06A;
+      --amber-dark:  #A06830;
+      --border:      #DDD8CE;
+      --border-light:#EAE6DE;
+      --shadow-sm:   0 1px 4px rgba(28,28,26,0.07);
+      --shadow-md:   0 4px 20px rgba(28,28,26,0.09);
+      --shadow-lg:   0 12px 48px rgba(28,28,26,0.13);
+      --radius:      4px;
+      --radius-lg:   10px;
+      --nav-h:       68px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Outfit', system-ui, sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg-warm); }
+    ::-webkit-scrollbar-thumb { background: var(--green-light); border-radius: 3px; }
+    ::selection { background: var(--amber); color: #fff; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── i18n ── */
+    [data-lang="en"] .ru { display: none; }
+    [data-lang="ru"] .en { display: none; }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 200;
+      height: var(--nav-h);
+      display: flex; align-items: center;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    nav.scrolled {
+      background: rgba(248,246,241,0.96);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 1px 0 var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.3rem; font-weight: 500;
+      color: var(--green-dark);
+      letter-spacing: 0.01em;
+    }
+    .nav-logo span { color: var(--amber); }
+
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--fg-muted);
+      position: relative; transition: color 0.2s;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1.5px; background: var(--amber);
+      transition: width 0.25s ease;
+    }
+    .nav-links a:hover { color: var(--fg); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Language toggle */
+    .lang-toggle {
+      display: flex; align-items: center;
+      background: var(--bg-warm);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .lang-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      border: none; background: transparent;
+      color: var(--fg-muted);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .nav-cta {
+      background: var(--green);
+      color: #fff !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius);
+      font-size: 0.82rem !important;
+      font-weight: 500 !important;
+      transition: background 0.2s, transform 0.15s !important;
+    }
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { background: var(--green-dark) !important; transform: translateY(-1px); }
+
+    /* Mobile */
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .nav-toggle span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--fg); transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 2rem; z-index: 199;
+      box-shadow: var(--shadow-md);
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .mobile-menu a { font-size: 1rem; font-weight: 500; color: var(--fg); }
+    .mobile-lang { display: flex; gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding-top: var(--nav-h);
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/96914253/gv7QXuZqq9kqDwrbZTtEa8/hero-bg-WatSVDyEAFDt8gHCRHVnMZ.webp');
+      background-size: cover; background-position: left center;
+      opacity: 0.4;
+    }
+    .hero-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(110deg, rgba(248,246,241,0.1) 0%, rgba(248,246,241,0.75) 45%, rgba(248,246,241,1) 100%);
+    }
+
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      width: 100%;
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem; align-items: center;
+      padding-top: 5rem; padding-bottom: 5rem;
+    }
+
+    .hero-eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--amber);
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: inline-block;
+      width: 28px; height: 1.5px; background: var(--amber);
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(3rem, 5.5vw, 5.2rem);
+      font-weight: 400; line-height: 1.05;
+      color: var(--green-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .hero-name em { font-style: italic; color: var(--amber); }
+
+    .hero-tagline {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-weight: 300; color: var(--fg-muted);
+      margin-bottom: 1.75rem;
+      line-height: 1.6;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem; color: var(--fg-muted);
+      line-height: 1.8; max-width: 520px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--green); color: #fff;
+      padding: 0.75rem 1.6rem; border-radius: var(--radius);
+      font-size: 0.875rem; font-weight: 500;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer; border: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 10px rgba(45,90,74,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(45,90,74,0.3);
+    }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--green);
+      padding: 0.75rem 1.6rem; border-radius: var(--radius);
+      font-size: 0.875rem; font-weight: 500;
+      font-family: 'Outfit', sans-serif;
+      cursor: pointer; border: 1.5px solid var(--green);
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover { background: var(--green); color: #fff; transform: translateY(-2px); }
+
+    /* Hero right — stat cards */
+    .hero-cards { display: flex; flex-direction: column; gap: 1rem; }
+
+    .hero-card {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.6rem;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .hero-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .hero-card.accent { border-left: 3px solid var(--amber); }
+    .hero-card.primary { border-left: 3px solid var(--green); }
+
+    .card-num {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.4rem; font-weight: 400;
+      color: var(--green); line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .card-num.amber { color: var(--amber); }
+    .card-label { font-size: 0.82rem; color: var(--fg-muted); line-height: 1.5; }
+
+    .available-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(45,90,74,0.07);
+      border: 1px solid rgba(45,90,74,0.2);
+      border-radius: 100px; padding: 0.3rem 0.9rem;
+      font-size: 0.78rem; font-weight: 500;
+      color: var(--green); margin-bottom: 1.5rem;
+    }
+    .available-badge .dot {
+      width: 7px; height: 7px;
+      background: var(--green-light); border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.5; transform:scale(0.85); }
+    }
+
+    /* ============================================================
+       SECTION COMMON
+    ============================================================ */
+    .section-wrap {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--amber);
+      display: flex; align-items: center; gap: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+    .section-label::before {
+      content: ''; display: inline-block;
+      width: 20px; height: 1.5px; background: var(--amber);
+    }
+    .section-label.center { justify-content: center; }
+    .section-label.center::before { display: none; }
+
+    h2.section-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+      font-weight: 400; line-height: 1.15;
+      color: var(--green-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+    h2.section-title em { font-style: italic; color: var(--amber); }
+    h2.section-title.center { text-align: center; }
+
+    /* ============================================================
+       MARQUEE
+    ============================================================ */
+    .marquee-wrap {
+      background: var(--green-dark);
+      padding: 0.9rem 0; overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .marquee-track {
+      display: flex; white-space: nowrap;
+      animation: marquee 32s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-item {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0 1.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+    .marquee-item .sep { color: var(--amber); }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ============================================================
+       ABOUT
+    ============================================================ */
+    #about { padding: 7rem 0; position: relative; }
+    #about::after {
+      content: '01';
+      position: absolute; top: 3.5rem; right: 4rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 9rem; font-weight: 300;
+      color: rgba(45,90,74,0.05); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+
+    .about-left p {
+      font-size: 0.95rem; color: var(--fg-muted);
+      line-height: 1.85; margin-bottom: 1.2rem;
+    }
+
+    .about-quote {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic; font-size: 1.25rem;
+      color: var(--green);
+      border-left: 2px solid var(--amber);
+      padding: 0.9rem 1.4rem;
+      margin: 2rem 0;
+      background: rgba(196,136,74,0.05);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      line-height: 1.65;
+    }
+
+    /* Locations */
+    .location-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .location-tag {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--bg-warm); border: 1px solid var(--border);
+      border-radius: 100px; padding: 0.3rem 0.85rem;
+      font-size: 0.78rem; font-weight: 500; color: var(--fg-muted);
+    }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 1.6rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0.5rem; bottom: 0;
+      width: 1.5px;
+      background: linear-gradient(to bottom, var(--amber), var(--green), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 2.25rem; }
+    .tl-item::before {
+      content: ''; position: absolute;
+      left: -1.725rem; top: 0.4rem;
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--amber); border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--amber);
+    }
+    .tl-item.green::before { background: var(--green); box-shadow: 0 0 0 2px var(--green); }
+    .tl-period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; color: var(--fg-light);
+      letter-spacing: 0.08em; margin-bottom: 0.15rem;
+    }
+    .tl-role {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem; font-weight: 500;
+      color: var(--fg); margin-bottom: 0.1rem;
+    }
+    .tl-company {
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--green); margin-bottom: 0.45rem;
+    }
+    .tl-company.amazon { color: var(--amber-dark); }
+    .tl-desc {
+      font-size: 0.85rem; color: var(--fg-muted); line-height: 1.65;
+    }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    #services { padding: 7rem 0; background: var(--bg-warm); position: relative; }
+    #services::after {
+      content: '02';
+      position: absolute; top: 3.5rem; left: 4rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 9rem; font-weight: 300;
+      color: rgba(196,136,74,0.06); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+
+    .services-intro {
+      max-width: 600px; margin: 0 auto 4rem;
+      text-align: center;
+    }
+    .services-intro p { font-size: 0.95rem; color: var(--fg-muted); line-height: 1.8; }
+
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .svc-card {
+      background: #fff;
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .svc-card::after {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: var(--amber);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .svc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+    .svc-card:hover::after { transform: scaleX(1); }
+    .svc-card.dark {
+      background: var(--green-dark); border-color: var(--green-dark);
+    }
+    .svc-card.dark h3 { color: #fff; }
+    .svc-card.dark p { color: rgba(255,255,255,0.65); }
+    .svc-card.dark .svc-icon { background: rgba(255,255,255,0.1); }
+    .svc-card.dark::after { background: var(--amber); }
+
+    .svc-icon {
+      width: 44px; height: 44px;
+      background: rgba(45,90,74,0.08);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; margin-bottom: 1.2rem;
+    }
+    .svc-card h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem; font-weight: 500;
+      color: var(--fg); margin-bottom: 0.65rem;
+    }
+    .svc-card p { font-size: 0.85rem; color: var(--fg-muted); line-height: 1.7; }
+
+    /* ============================================================
+       EXPERTISE
+    ============================================================ */
+    #expertise { padding: 7rem 0; position: relative; }
+    #expertise::after {
+      content: '03';
+      position: absolute; top: 3.5rem; right: 4rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 9rem; font-weight: 300;
+      color: rgba(45,90,74,0.05); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+
+    .expertise-grid {
+      display: grid; grid-template-columns: 0.9fr 1.1fr;
+      gap: 5rem; align-items: start;
+    }
+
+    .expertise-left p {
+      font-size: 0.95rem; color: var(--fg-muted);
+      line-height: 1.8; margin-bottom: 1.25rem;
+    }
+
+    .tech-image {
+      width: 100%; border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg); display: block;
+      margin-bottom: 1.75rem;
+    }
+
+    .skill-group { margin-bottom: 1.75rem; }
+    .skill-group-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 0.65rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .skill-tag {
+      background: var(--bg-warm); border: 1px solid var(--border);
+      border-radius: 100px; padding: 0.25rem 0.75rem;
+      font-size: 0.78rem; font-weight: 500; color: var(--fg);
+      transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+      cursor: default;
+    }
+    .skill-tag:hover { background: var(--green); border-color: var(--green); color: #fff; transform: translateY(-1px); }
+    .skill-tag.amber-tag {
+      background: rgba(196,136,74,0.08); border-color: rgba(196,136,74,0.3); color: var(--amber-dark);
+    }
+    .skill-tag.amber-tag:hover { background: var(--amber); border-color: var(--amber); color: #fff; }
+
+    /* ============================================================
+       APPROACH / PILLARS
+    ============================================================ */
+    #approach {
+      padding: 7rem 0;
+      background: var(--bg-dark);
+      position: relative; overflow: hidden;
+    }
+    #approach::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/96914253/gv7QXuZqq9kqDwrbZTtEa8/pattern-accent-dubtBJhcDVvjhKgRLnLJ4K.webp');
+      background-size: 280px; opacity: 0.04;
+    }
+
+    .approach-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+    .approach-header h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+      font-weight: 400; color: #fff;
+      letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .approach-header h2 em { font-style: italic; color: var(--amber-light); }
+    .approach-header p { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
+
+    .pillars-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+    .pillar {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem; text-align: center;
+      transition: background 0.25s, transform 0.25s;
+    }
+    .pillar:hover { background: rgba(255,255,255,0.07); transform: translateY(-4px); }
+    .pillar-icon { font-size: 1.9rem; margin-bottom: 0.9rem; display: block; }
+    .pillar-bar { width: 24px; height: 2px; background: var(--amber); border-radius: 2px; margin: 0 auto 0.9rem; }
+    .pillar h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem; font-weight: 500;
+      color: #fff; margin-bottom: 0.65rem;
+    }
+    .pillar p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact { padding: 7rem 0; position: relative; }
+    #contact::after {
+      content: '05';
+      position: absolute; top: 3.5rem; right: 4rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 9rem; font-weight: 300;
+      color: rgba(196,136,74,0.05); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+
+    .contact-left p { font-size: 0.95rem; color: var(--fg-muted); line-height: 1.8; margin-bottom: 2rem; }
+
+    .contact-items { display: flex; flex-direction: column; gap: 0.85rem; }
+    .contact-item {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.9rem 1.1rem;
+      background: var(--bg-warm); border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .contact-item:hover { border-color: var(--green); transform: translateX(4px); }
+    .contact-icon {
+      width: 38px; height: 38px;
+      background: rgba(45,90,74,0.1); border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .contact-label { font-size: 0.7rem; font-weight: 500; color: var(--fg-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.1rem; }
+    .contact-value { font-size: 0.875rem; font-weight: 500; color: var(--fg); }
+
+    /* Form */
+    .contact-form {
+      background: #fff; border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg); padding: 2.25rem;
+      box-shadow: var(--shadow-md);
+    }
+    .contact-form h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem; font-weight: 500;
+      color: var(--fg); margin-bottom: 1.5rem;
+    }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label {
+      display: block; font-size: 0.78rem; font-weight: 500;
+      color: var(--fg-muted); margin-bottom: 0.35rem; letter-spacing: 0.03em;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%; padding: 0.65rem 0.9rem;
+      border: 1.5px solid var(--border); border-radius: var(--radius);
+      font-family: 'Outfit', sans-serif; font-size: 0.875rem;
+      color: var(--fg); background: var(--bg);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none; appearance: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(45,90,74,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-submit {
+      width: 100%; background: var(--green); color: #fff;
+      border: none; padding: 0.8rem 1.5rem;
+      border-radius: var(--radius);
+      font-family: 'Outfit', sans-serif; font-size: 0.875rem; font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+    }
+    .form-submit:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+    .form-success { display: none; text-align: center; padding: 2rem 1rem; }
+    .form-success .si { font-size: 2.5rem; margin-bottom: 0.75rem; }
+    .form-success h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.4rem; color: var(--green-dark); margin-bottom: 0.5rem;
+    }
+    .form-success p { font-size: 0.875rem; color: var(--fg-muted); }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--bg-dark); color: rgba(255,255,255,0.5);
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1.25rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem; color: #fff;
+    }
+    .footer-logo span { color: var(--amber); }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--amber); }
+
+    /* ============================================================
+       TOAST
+    ============================================================ */
+    .toast {
+      position: fixed; bottom: 2rem; right: 2rem;
+      background: var(--green-dark); color: #fff;
+      padding: 0.9rem 1.4rem; border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg); font-size: 0.875rem; font-weight: 500;
+      z-index: 999;
+      transform: translateY(120%); opacity: 0;
+      transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1), opacity 0.35s;
+      display: flex; align-items: center; gap: 0.5rem;
+      max-width: 320px;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-h: 62px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .nav-right .nav-links { display: none; }
+
+      .hero-content { grid-template-columns: 1fr; padding-top: 3rem; gap: 2.5rem; }
+      .hero-cards { flex-direction: row; flex-wrap: wrap; }
+      .hero-card { flex: 1; min-width: 140px; }
+
+      .about-grid,
+      .expertise-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+
+      #about::after, #services::after, #expertise::after,
+      #approach::before, #contact::after { font-size: 5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+      .pillars-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar" class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="#hero">DevPortfolio</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Software Engineer & Technology Consultant</h1>
-                <p>Building innovative solutions with clean, efficient code</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
-                </div>
-            </div>
-        </div>
-        <div class="hero-shape"></div>
-    </section>
+<!-- ── NAVIGATION ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Tatiana<span>.</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about"><span class="en">About</span><span class="ru">Обо мне</span></a></li>
+        <li><a href="#services"><span class="en">Services</span><span class="ru">Услуги</span></a></li>
+        <li><a href="#expertise"><span class="en">Expertise</span><span class="ru">Экспертиза</span></a></li>
+        <li><a href="#approach"><span class="en">Approach</span><span class="ru">Подход</span></a></li>
+        <li><a href="#contact" class="nav-cta"><span class="en">Let's Talk</span><span class="ru">Связаться</span></a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btnEN" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" id="btnRU" onclick="setLang('ru')">RU</button>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Me</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="image-container">
-                        <img src="assets/images/profile.jpg" alt="Professional headshot">
-                    </div>
-                </div>
-                <div class="about-text">
-                    <h3>Hello, I'm <span class="highlight">John Doe</span></h3>
-                    <p class="lead">A passionate software engineer and technology consultant with expertise in building scalable web applications and solving complex technical challenges.</p>
-                    <p>With over 8 years of experience in software development and consulting, I specialize in creating efficient, maintainable solutions that drive business growth. My approach combines technical excellence with a deep understanding of client needs to deliver results that exceed expectations.</p>
-                    <p>I'm constantly learning and exploring new technologies to stay at the forefront of the industry. When I'm not coding, you can find me contributing to open-source projects, mentoring junior developers, or speaking at tech conferences.</p>
-                    <div class="about-details">
-                        <div class="detail">
-                            <span class="label">Name:</span>
-                            <span class="value">John Doe</span>
-                        </div>
-                        <div class="detail">
-                            <span class="label">Email:</span>
-                            <span class="value">contact@johndoe.dev</span>
-                        </div>
-                        <div class="detail">
-                            <span class="label">Location:</span>
-                            <span class="value">San Francisco, CA</span>
-                        </div>
-                        <div class="detail">
-                            <span class="label">Availability:</span>
-                            <span class="value">Open to opportunities</span>
-                        </div>
-                    </div>
-                    <div class="about-buttons">
-                        <a href="#" class="btn btn-primary">Download Resume</a>
-                        <div class="social-links">
-                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about" class="ml"><span class="en">About</span><span class="ru">Обо мне</span></a></li>
+    <li><a href="#services" class="ml"><span class="en">Services</span><span class="ru">Услуги</span></a></li>
+    <li><a href="#expertise" class="ml"><span class="en">Expertise</span><span class="ru">Экспертиза</span></a></li>
+    <li><a href="#approach" class="ml"><span class="en">Approach</span><span class="ru">Подход</span></a></li>
+    <li><a href="#contact" class="ml"><span class="en">Let's Talk</span><span class="ru">Связаться</span></a></li>
+  </ul>
+  <div class="mobile-lang">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+  </div>
+</div>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Technical Skills</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-js"></i>
-                            </div>
-                            <h4>JavaScript</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <h4>Python</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-java"></i>
-                            </div>
-                            <h4>Java</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-php"></i>
-                            </div>
-                            <h4>PHP</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h4>TypeScript</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h4>C#</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 75%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skills-category">
-                    <h3>Frontend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <h4>HTML5</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 98%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <h4>CSS3</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-react"></i>
-                            </div>
-                            <h4>React</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-vuejs"></i>
-                            </div>
-                            <h4>Vue.js</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-angular"></i>
-                            </div>
-                            <h4>Angular</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-sass"></i>
-                            </div>
-                            <h4>Sass</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skills-category">
-                    <h3>Backend Development</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-node-js"></i>
-                            </div>
-                            <h4>Node.js</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-server"></i>
-                            </div>
-                            <h4>Express.js</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <h4>MongoDB</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <h4>SQL</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 92%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-aws"></i>
-                            </div>
-                            <h4>AWS</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-docker"></i>
-                            </div>
-                            <h4>Docker</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skills-category">
-                    <h3>Other Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fab fa-git-alt"></i>
-                            </div>
-                            <h4>Git</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-code-branch"></i>
-                            </div>
-                            <h4>CI/CD</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h4>Responsive Design</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-tachometer-alt"></i>
-                            </div>
-                            <h4>Performance Optimization</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-universal-access"></i>
-                            </div>
-                            <h4>Accessibility</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h4>Team Leadership</h4>
-                            <div class="skill-level">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="available-badge">
+        <span class="dot"></span>
+        <span class="en">Available for new engagements</span>
+        <span class="ru">Открыта для новых проектов</span>
+      </div>
+      <div class="hero-eyebrow">
+        <span class="en">Independent Technology Consultant</span>
+        <span class="ru">Независимый технологический консультант</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="en">Tatiana<br/><em>Tokareva</em></span>
+        <span class="ru">Татьяна<br/><em>Токарева</em></span>
+      </h1>
+      <p class="hero-tagline">
+        <span class="en">Software Engineer · Technical Lead · Technology Consultant</span>
+        <span class="ru">Инженер-программист · Технический руководитель · Консультант</span>
+      </p>
+      <p class="hero-desc">
+        <span class="en">15 years of engineering across Amazon, healthcare, startups, and non-profits — in Canada, USA, and Russia. I help organizations build better software, healthier teams, and smarter technology strategies.</span>
+        <span class="ru">15 лет инженерного опыта в Amazon, здравоохранении, стартапах и НКО — в Канаде, США и России. Помогаю организациям создавать лучшее программное обеспечение, эффективные команды и продуманные технологические стратегии.</span>
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          <span class="en">Start a Conversation</span>
+          <span class="ru">Начать разговор</span>
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5h10M9 4l3.5 3.5L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#services" class="btn-secondary">
+          <span class="en">View Services</span>
+          <span class="ru">Мои услуги</span>
+        </a>
+      </div>
+    </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="projects-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Development</button>
-                <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
-                <button class="filter-btn" data-filter="backend">Backend</button>
-                <button class="filter-btn" data-filter="consulting">Consulting</button>
-                <button class="filter-btn" data-filter="e-commerce">E-commerce</button>
-                <button class="filter-btn" data-filter="ai">AI & Voice</button>
-            </div>
-            <div class="projects-grid">
-                <div class="project-item" data-category="e-commerce">
-                    <div class="project-image">
-                        <img src="assets/images/projects/amazon/prime-wardrobe.jpg" alt="Amazon Prime Wardrobe">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://www.cnbc.com/2025/01/10/amazon-to-shut-down-stitch-fix-competitor-prime-try-before-you-buy.html" class="project-link" target="_blank"><i class="fas fa-link"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Amazon Prime Wardrobe</h3>
-                        <p>Led development of Amazon's "Try Before You Buy" service that allowed Prime members to try clothes, shoes, and accessories before purchasing. The service featured a sophisticated inventory management system, personalized recommendations, and seamless returns processing.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">DynamoDB</span>
-                            <span class="tech-tag">Microservices</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-item" data-category="e-commerce">
-                    <div class="project-image">
-                        <img src="assets/images/projects/amazon/myhabit.jpg" alt="Amazon MyHabit">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://www.failory.com/amazon/myhabit-com" class="project-link" target="_blank"><i class="fas fa-link"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Amazon MyHabit</h3>
-                        <p>Developed Amazon's membership-only flash sales platform offering up to 60% discounts on designer items. Built a scalable architecture handling high-traffic daily sales events and implemented real-time inventory management to prevent overselling during limited-time offers.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Spring</span>
-                            <span class="tech-tag">Oracle</span>
-                            <span class="tech-tag">Redis</span>
-                            <span class="tech-tag">AWS</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-item" data-category="ai">
-                    <div class="project-image">
-                        <img src="assets/images/projects/amazon/alexa-health.jpg" alt="Amazon Alexa Health Skills Kit">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://developer.amazon.com/en-US/blogs/alexa/alexa-skills-kit/2019/04/introducing-new-alexa-healthcare-skills" class="project-link" target="_blank"><i class="fas fa-link"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Amazon Alexa Health Skills Kit</h3>
-                        <p>Contributed to the development of Amazon's HIPAA-compliant Alexa Health Skills Kit, enabling healthcare providers to build voice experiences for patients. Implemented secure data handling protocols and voice-based authentication systems while ensuring compliance with healthcare regulations.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">AWS Lambda</span>
-                            <span class="tech-tag">DynamoDB</span>
-                            <span class="tech-tag">HIPAA Compliance</span>
-                            <span class="tech-tag">Voice UI</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-item" data-category="mobile">
-                    <div class="project-image">
-                        <img src="assets/images/projects/charisma.jpg" alt="Charisma: The Happiness Habit App">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://apps.apple.com/us/app/charisma-the-happiness-habit/id1479325003" class="project-link" target="_blank"><i class="fas fa-link"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Charisma: The Happiness Habit</h3>
-                        <p>A comprehensive wellness mobile application that combines meditation, habit tracking, and mindfulness tools. The app helps users build healthy habits, reduce stress, and improve overall well-being through guided courses and personalized recommendations.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Swift</span>
-                            <span class="tech-tag">iOS Development</span>
-                            <span class="tech-tag">HealthKit</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">UI/UX Design</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-item" data-category="web">
-                    <div class="project-image">
-                        <img src="assets/images/projects/meditate.jpg" alt="Meditate in Seattle Website">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://meditateinseattle.org" class="project-link" target="_blank"><i class="fas fa-link"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Meditate in Seattle</h3>
-                        <p>A responsive website for Kadampa Meditation Center Washington that features class schedules, event registration, content management, and online payment processing. The site serves as a hub for meditation resources and community events.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">WordPress</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">CSS3</span>
-                            <span class="tech-tag">WooCommerce</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-item" data-category="web">
-                    <div class="project-image">
-                        <img src="assets/images/projects/silachi.jpg" alt="Silachi Wellness Platform">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://silachi.com" class="project-link" target="_blank"><i class="fas fa-link"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Silachi Wellness Platform</h3>
-                        <p>A modern wellness coaching platform featuring appointment scheduling, content management, and client portal functionality. The site showcases the Silachi Method and provides resources for holistic health and wellness.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">Stripe API</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-item" data-category="web">
-                    <div class="project-image">
-                        <img src="assets/images/project1.jpg" alt="E-commerce Platform">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>E-commerce Platform</h3>
-                        <p>A full-featured e-commerce platform built with React, Node.js, and MongoDB. Includes user authentication, product management, shopping cart, and payment processing.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">Redux</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-item" data-category="mobile">
-                    <div class="project-image">
-                        <img src="assets/images/project2.jpg" alt="Fitness Tracking App">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Fitness Tracking App</h3>
-                        <p>A cross-platform mobile application for tracking workouts, nutrition, and health metrics. Features include custom workout plans, progress tracking, and social sharing.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Redux</span>
-                            <span class="tech-tag">GraphQL</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-item" data-category="backend">
-                    <div class="project-image">
-                        <img src="assets/images/project3.jpg" alt="API Gateway Service">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="#" class="project-link"><i class="fas fa-link"></i></a>
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>API Gateway Service</h3>
-                        <p>A scalable API gateway service that handles routing, authentication, rate limiting, and monitoring for a microservices architecture.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">AWS</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="projects-more">
-                <a href="#" class="btn btn-primary">View All Projects</a>
-            </div>
+    <div class="hero-cards">
+      <div class="hero-card primary  -delay-1">
+        <div class="card-num">15<span style="font-size:1.4rem;color:var(--amber)">+</span></div>
+        <div class="card-label">
+          <span class="en">Years of professional software engineering across corporations, startups &amp; consulting</span>
+          <span class="ru">Лет профессионального опыта в корпорациях, стартапах и консалтинге</span>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Work Experience</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2021 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Senior Software Engineer</h3>
-                        <h4>Tech Innovations Inc.</h4>
-                        <p>Lead the development of enterprise-scale web applications and services. Architect solutions, mentor junior developers, and collaborate with cross-functional teams to deliver high-quality software products.</p>
-                        <ul class="timeline-list">
-                            <li>Architected and implemented a microservices-based platform that increased system reliability by 35%</li>
-                            <li>Led a team of 8 developers in delivering a major product release ahead of schedule</li>
-                            <li>Implemented CI/CD pipelines that reduced deployment time by 60%</li>
-                            <li>Optimized database queries resulting in 45% performance improvement</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2018 - 2021</div>
-                    <div class="timeline-content">
-                        <h3>Technology Consultant</h3>
-                        <h4>Global Consulting Group</h4>
-                        <p>Provided technical consulting services to clients across various industries. Analyzed business requirements, designed technical solutions, and guided implementation teams.</p>
-                        <ul class="timeline-list">
-                            <li>Advised 12+ clients on technology strategy and digital transformation initiatives</li>
-                            <li>Developed a custom CRM solution that increased sales efficiency by 25%</li>
-                            <li>Led cloud migration projects resulting in 30% cost reduction for clients</li>
-                            <li>Conducted technical workshops and training sessions for client teams</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2016 - 2018</div>
-                    <div class="timeline-content">
-                        <h3>Full Stack Developer</h3>
-                        <h4>WebSolutions Co.</h4>
-                        <p>Developed and maintained web applications for clients in e-commerce, healthcare, and finance sectors. Worked with React, Node.js, and various database technologies.</p>
-                        <ul class="timeline-list">
-                            <li>Built responsive web applications with React and Redux</li>
-                            <li>Developed RESTful APIs using Node.js and Express</li>
-                            <li>Implemented authentication and authorization systems</li>
-                            <li>Optimized application performance and user experience</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">2014 - 2016</div>
-                    <div class="timeline-content">
-                        <h3>Junior Software Developer</h3>
-                        <h4>StartUp Innovations</h4>
-                        <p>Contributed to the development of a SaaS platform for small businesses. Worked on frontend and backend features, bug fixes, and performance improvements.</p>
-                        <ul class="timeline-list">
-                            <li>Developed UI components using Angular and Bootstrap</li>
-                            <li>Created database schemas and stored procedures</li>
-                            <li>Implemented automated testing with Jest and Cypress</li>
-                            <li>Participated in agile development processes</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="education">
-                <h3>Education</h3>
-                <div class="education-item">
-                    <div class="education-year">2010 - 2014</div>
-                    <h4>Bachelor of Science in Computer Science</h4>
-                    <p>Stanford University</p>
-                    <p>GPA: 3.8/4.0</p>
-                </div>
-                <div class="education-item">
-                    <div class="education-year">2018 - 2020</div>
-                    <h4>Master of Science in Software Engineering</h4>
-                    <p>Massachusetts Institute of Technology</p>
-                    <p>GPA: 3.9/4.0</p>
-                </div>
-            </div>
-            
-            <div class="certifications">
-                <h3>Certifications</h3>
-                <div class="certifications-grid">
-                    <div class="certification-item">
-                        <div class="certification-icon">
-                            <i class="fab fa-aws"></i>
-                        </div>
-                        <h4>AWS Certified Solutions Architect</h4>
-                        <p>Amazon Web Services</p>
-                    </div>
-                    <div class="certification-item">
-                        <div class="certification-icon">
-                            <i class="fab fa-google"></i>
-                        </div>
-                        <h4>Google Cloud Professional Developer</h4>
-                        <p>Google Cloud</p>
-                    </div>
-                    <div class="certification-item">
-                        <div class="certification-icon">
-                            <i class="fab fa-microsoft"></i>
-                        </div>
-                        <h4>Microsoft Certified: Azure Developer Associate</h4>
-                        <p>Microsoft</p>
-                    </div>
-                    <div class="certification-item">
-                        <div class="certification-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <h4>Certified Scrum Master</h4>
-                        <p>Scrum Alliance</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="hero-card accent  -delay-2">
+        <div class="card-num amber">✦</div>
+        <div class="card-label">
+          <span class="en">Founding engineer on <strong>Amazon Alexa Health</strong> and <strong>Prime Wardrobe</strong></span>
+          <span class="ru">Инженер-основатель <strong>Amazon Alexa Health</strong> и <strong>Prime Wardrobe</strong></span>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Services</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <p>Custom web applications built with modern frameworks and best practices. From simple websites to complex web applications, I deliver solutions that meet your business needs.</p>
-                    <ul class="service-list">
-                        <li>Responsive website development</li>
-                        <li>Progressive Web Apps (PWAs)</li>
-                        <li>E-commerce solutions</li>
-                        <li>Content Management Systems</li>
-                        <li>Web portals and dashboards</li>
-                    </ul>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile App Development</h3>
-                    <p>Cross-platform and native mobile applications for iOS and Android. User-friendly interfaces with seamless functionality to engage your audience on mobile devices.</p>
-                    <ul class="service-list">
-                        <li>Native iOS and Android apps</li>
-                        <li>Cross-platform development</li>
-                        <li>App UI/UX design</li>
-                        <li>App testing and deployment</li>
-                        <li>App maintenance and updates</li>
-                    </ul>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>Backend Development</h3>
-                    <p>Robust, scalable backend systems and APIs that power your applications. Secure, efficient, and reliable server-side solutions for your business.</p>
-                    <ul class="service-list">
-                        <li>RESTful API development</li>
-                        <li>Database design and optimization</li>
-                        <li>Authentication and authorization</li>
-                        <li>Microservices architecture</li>
-                        <li>Server-side performance optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Cloud Solutions</h3>
-                    <p>Cloud infrastructure setup, migration, and management. Leverage the power of cloud computing to scale your applications and reduce operational costs.</p>
-                    <ul class="service-list">
-                        <li>Cloud migration strategies</li>
-                        <li>Infrastructure as Code (IaC)</li>
-                        <li>Serverless architecture</li>
-                        <li>DevOps implementation</li>
-                        <li>Cloud cost optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Technology Consulting</h3>
-                    <p>Strategic technology advice to help your business grow. From digital transformation to technology stack selection, I provide guidance tailored to your needs.</p>
-                    <ul class="service-list">
-                        <li>Digital transformation strategy</li>
-                        <li>Technology stack assessment</li>
-                        <li>Software architecture review</li>
-                        <li>Technical due diligence</li>
-                        <li>Team capability building</li>
-                    </ul>
-                </div>
-                
-                <div class="service-item">
-                    <div class="service-icon">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
-                    <h3>Code Review & Optimization</h3>
-                    <p>Comprehensive code reviews and optimization to improve quality, performance, and maintainability of your existing applications.</p>
-                    <ul class="service-list">
-                        <li>Code quality assessment</li>
-                        <li>Performance optimization</li>
-                        <li>Security vulnerability detection</li>
-                        <li>Refactoring recommendations</li>
-                        <li>Best practices implementation</li>
-                    </ul>
-                </div>
-            </div>
+      </div>
+      <div class="hero-card  -delay-3">
+        <div class="card-num" style="font-size:1.5rem; color:var(--green)">M.Sc.</div>
+        <div class="card-label">
+          <span class="en">Computer Science, University of Western Ontario — GPA 95.5/100</span>
+          <span class="ru">Магистр Computer Science, Университет Западного Онтарио — GPA 95.5/100</span>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Client Testimonials</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="testimonials-slider">
-                <div class="testimonial-item">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"John delivered an exceptional e-commerce platform that exceeded our expectations. His technical expertise and attention to detail resulted in a seamless user experience and robust backend system. We've seen a 40% increase in online sales since launch."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="assets/images/client1.jpg" alt="Sarah Johnson">
-                            </div>
-                            <div class="author-info">
-                                <h4>Sarah Johnson</h4>
-                                <p>CEO, Fashion Retail Co.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-item">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"Working with John on our cloud migration project was a game-changer for our company. His strategic approach and technical knowledge helped us modernize our infrastructure while reducing costs by 35%. I highly recommend his consulting services."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="assets/images/client2.jpg" alt="Michael Chen">
-                            </div>
-                            <div class="author-info">
-                                <h4>Michael Chen</h4>
-                                <p>CTO, FinTech Solutions</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-item">
-                    <div class="testimonial-content">
-                        <div class="testimonial-text">
-                            <p>"John's expertise in mobile app development was instrumental in the success of our fitness tracking app. He delivered a polished, user-friendly application that our customers love. His attention to performance and UX details made all the difference."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="assets/images/client3.jpg" alt="Emily Rodriguez">
-                            </div>
-                            <div class="author-info">
-                                <h4>Emily Rodriguez</h4>
-                                <p>Founder, HealthTech Startup</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonials-nav">
-                <button class="testimonial-nav-btn prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="testimonial-nav-btn next"><i class="fas fa-chevron-right"></i></button>
-            </div>
+      </div>
+      <div class="hero-card  -delay-4">
+        <div class="card-num" style="font-size:1.35rem; color:var(--amber-dark)">CA · US · RU</div>
+        <div class="card-label">
+          <span class="en">Cross-cultural experience across three countries and multiple industries</span>
+          <span class="ru">Опыт работы в трёх странах и различных отраслях</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p>Feel free to reach out for project inquiries, consulting opportunities, or just to say hello. I'm always open to discussing new projects and ideas.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email</h4>
-                                <p><a href="mailto:contact@johndoe.dev">contact@johndoe.dev</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Phone</h4>
-                                <p><a href="tel:+14155552671">+1 (415) 555-2671</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Location</h4>
-                                <p>San Francisco, California</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-medium-m"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-dev"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Send Me a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-            </div>
+<!-- ── MARQUEE ── -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Java <span class="sep">✦</span></span>
+    <span class="marquee-item">TypeScript <span class="sep">✦</span></span>
+    <span class="marquee-item">React / React Native <span class="sep">✦</span></span>
+    <span class="marquee-item">Node.js <span class="sep">✦</span></span>
+    <span class="marquee-item">AWS <span class="sep">✦</span></span>
+    <span class="marquee-item">Healthcare FHIR/HL7 <span class="sep">✦</span></span>
+    <span class="marquee-item">Alexa Voice AI <span class="sep">✦</span></span>
+    <span class="marquee-item">System Architecture <span class="sep">✦</span></span>
+    <span class="marquee-item">Scrum / Agile <span class="sep">✦</span></span>
+    <span class="marquee-item">LLM Integration <span class="sep">✦</span></span>
+    <span class="marquee-item">Docker / Kubernetes <span class="sep">✦</span></span>
+    <span class="marquee-item">MongoDB · PostgreSQL <span class="sep">✦</span></span>
+    <span class="marquee-item">Java <span class="sep">✦</span></span>
+    <span class="marquee-item">TypeScript <span class="sep">✦</span></span>
+    <span class="marquee-item">React / React Native <span class="sep">✦</span></span>
+    <span class="marquee-item">Node.js <span class="sep">✦</span></span>
+    <span class="marquee-item">AWS <span class="sep">✦</span></span>
+    <span class="marquee-item">Healthcare FHIR/HL7 <span class="sep">✦</span></span>
+    <span class="marquee-item">Alexa Voice AI <span class="sep">✦</span></span>
+    <span class="marquee-item">System Architecture <span class="sep">✦</span></span>
+    <span class="marquee-item">Scrum / Agile <span class="sep">✦</span></span>
+    <span class="marquee-item">LLM Integration <span class="sep">✦</span></span>
+    <span class="marquee-item">Docker / Kubernetes <span class="sep">✦</span></span>
+    <span class="marquee-item">MongoDB · PostgreSQL <span class="sep">✦</span></span>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="section-label">
+          <span class="en">About</span>
+          <span class="ru">Обо мне</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="#hero">DevPortfolio</a>
-                </div>
-                <div class="footer-nav">
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 John Doe. All rights reserved.</p>
-            </div>
+        <h2 class="section-title">
+          <span class="en">Engineer who speaks both <em>code</em> and <em>people</em></span>
+          <span class="ru">Инженер, говорящий на языке <em>кода</em> и <em>людей</em></span>
+        </h2>
+        <p class="en">Over 15 years I have worked across the full spectrum of software engineering — from early-stage startups to large-scale distributed systems at Amazon. That breadth gives me something rare: the ability to see the whole board, from a single line of code to a company-wide technology strategy.</p>
+        <p class="ru">За 15 лет я прошла весь спектр разработки программного обеспечения — от стартапов на ранней стадии до крупномасштабных распределённых систем в Amazon. Этот опыт даёт мне редкую способность видеть картину целиком: от отдельной строки кода до технологической стратегии всей компании.</p>
+        <p class="en">As a founding engineer on Amazon Alexa Health, I drove architecture for voice AI healthcare APIs, coordinated HIPAA compliance across 5+ teams, and built systems that handled sensitive personal health information at scale. At Xealth, I worked on FHIR protocol certification and digital healthcare prescription platforms.</p>
+        <p class="ru">Будучи инженером-основателем Amazon Alexa Health, я разрабатывала архитектуру API для голосового ИИ в здравоохранении, координировала соответствие HIPAA в более чем 5 командах и создавала системы для работы с персональными медицинскими данными. В Xealth я занималась сертификацией протокола FHIR и платформой цифровых медицинских назначений.</p>
+        <blockquote class="about-quote">
+          <span class="en">"The best technology solutions are the ones the whole team understands, believes in, and can evolve — without the original author in the room."</span>
+          <span class="ru">«Лучшие технологические решения — те, которые вся команда понимает, в которые верит и которые может развивать без участия первоначального автора.»</span>
+        </blockquote>
+        <p class="en">My experience across Canada, USA, and Russia has sharpened my sensitivity to intercultural dynamics — how teams communicate, how trust is built differently across cultures, and how to design processes that work for diverse groups of people.</p>
+        <p class="ru">Опыт работы в Канаде, США и России обострил моё понимание межкультурной динамики — как команды общаются, как по-разному строится доверие в разных культурах и как проектировать процессы, которые работают для разных людей.</p>
+        <div class="location-tags">
+          <span class="location-tag">🇨🇦 Canada</span>
+          <span class="location-tag">🇺🇸 USA</span>
+          <span class="location-tag">🇷🇺 Russia</span>
+          <span class="location-tag">🏥 Healthcare Tech</span>
+          <span class="location-tag">🛒 E-commerce</span>
+          <span class="location-tag">🎙️ Voice AI</span>
         </div>
-    </footer>
+      </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+      <div class="about-right  -delay-2">
+        <div class="section-label">
+          <span class="en">Experience</span>
+          <span class="ru">Опыт</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-period">2023 — present / настоящее время</div>
+            <div class="tl-role"><span class="en">Software Engineer / Consultant</span><span class="ru">Инженер-программист / Консультант</span></div>
+            <div class="tl-company"><span class="en">Self-Employed · Redmond, WA / Moscow</span><span class="ru">Самозанятость · Редмонд, США / Москва</span></div>
+            <div class="tl-desc"><span class="en">Building software solutions for local small businesses and a non-profit. Full-cycle: requirements, design, implementation, launch, SEO, support. React Native, Node.js, TypeScript, MySQL, MongoDB, Railway, GitHub Actions.</span><span class="ru">Разработка решений для малого бизнеса и НКО. Полный цикл: сбор требований, проектирование, реализация, запуск, SEO, поддержка. React Native, Node.js, TypeScript, MySQL, MongoDB.</span></div>
+          </div>
+          <div class="tl-item green">
+            <div class="tl-period">2021 — 2023</div>
+            <div class="tl-role"><span class="en">Software Engineer</span><span class="ru">Инженер-программист</span></div>
+            <div class="tl-company">Xealth · Seattle, WA</div>
+            <div class="tl-desc"><span class="en">Digital healthcare prescription platform. FHIR protocol certification (Epic &amp; Cerner EHR integration), Node.js, React, TypeScript, MongoDB, AWS. CI/CD improvements with GitHub Actions, Docker, Kubernetes.</span><span class="ru">Платформа цифровых медицинских назначений. Сертификация протокола FHIR (интеграция с Epic и Cerner), Node.js, React, TypeScript, MongoDB, AWS. Улучшение CI/CD с GitHub Actions, Docker, Kubernetes.</span></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period">2019 — 2021</div>
+            <div class="tl-role"><span class="en">Technical Lead</span><span class="ru">Технический руководитель</span></div>
+            <div class="tl-company">Charisma · Remote</div>
+            <div class="tl-desc"><span class="en">Lead engineer at early-stage startup. Built &amp; launched MVP. Firebase Cloud Firestore, Angular, Node.js. Multi-language educational content platform. Product design &amp; market research.</span><span class="ru">Ведущий инженер стартапа на ранней стадии. Разработка и запуск MVP. Firebase Cloud Firestore, Angular, Node.js. Платформа многоязычного образовательного контента.</span></div>
+          </div>
+          <div class="tl-item amazon">
+            <div class="tl-period">2015 — 2019</div>
+            <div class="tl-role"><span class="en">Software Development Engineer</span><span class="ru">Инженер-разработчик</span></div>
+            <div class="tl-company amazon">Amazon · Seattle, WA</div>
+            <div class="tl-desc"><span class="en">Founding engineer on Alexa Health. Architected Health Skills Kit APIs. PHI redaction for HIPAA compliance (5+ teams). Prime Wardrobe workflow orchestration. MyHabit/BuyVIP full-stack: 50× storage optimization.</span><span class="ru">Инженер-основатель Alexa Health. Архитектура API Health Skills Kit. Удаление PHI для HIPAA (5+ команд). Оркестрация рабочих процессов Prime Wardrobe. MyHabit/BuyVIP: оптимизация хранения в 50 раз.</span></div>
+          </div>
+          <div class="tl-item green">
+            <div class="tl-period">2012 — 2015</div>
+            <div class="tl-role"><span class="en">Software Development Engineer in Test</span><span class="ru">Инженер по тестированию</span></div>
+            <div class="tl-company amazon">Amazon · Seattle, WA</div>
+            <div class="tl-desc"><span class="en">Test automation frameworks for web &amp; mobile (iOS/Android). Data verification, load/performance testing tools. Drove releases to production.</span><span class="ru">Фреймворки автоматизации тестирования для веб и мобильных платформ (iOS/Android). Инструменты верификации данных и нагрузочного тестирования.</span></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period">2008 — 2010</div>
+            <div class="tl-role"><span class="en">Software Engineer / Test Automation</span><span class="ru">Инженер-программист / Автоматизация тестирования</span></div>
+            <div class="tl-company">DataArt · Voronezh, Russia</div>
+            <div class="tl-desc"><span class="en">SSO &amp; network authentication systems, network hardware management tools, VoIP UX for international clients.</span><span class="ru">Системы единого входа и сетевой аутентификации, инструменты управления сетевым оборудованием, VoIP UX для международных клиентов.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="section-wrap">
+    <div class="services-intro">
+      <div class="section-label center">
+        <span class="en">Services</span>
+        <span class="ru">Услуги</span>
+      </div>
+      <h2 class="section-title center">
+        <span class="en">How I can help your <em>organization</em></span>
+        <span class="ru">Чем я могу помочь вашей <em>организации</em></span>
+      </h2>
+      <p class="en">Focused engagements designed to create lasting change — not just deliverables. From architecture reviews to team coaching, I bring Amazon-level rigor to organizations of all sizes.</p>
+      <p class="ru">Целенаправленные проекты для создания долгосрочных изменений. От аудита архитектуры до коучинга команд — я привношу стандарты Amazon в организации любого размера.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="svc-card  -delay-1">
+        <div class="svc-icon">🏗️</div>
+        <h3><span class="en">Architecture &amp; System Design</span><span class="ru">Архитектура и проектирование систем</span></h3>
+        <p><span class="en">Deconstructing complex systems to find inefficiencies, design scalable solutions, and document architectural decisions. Proven at Amazon scale — Prime Wardrobe workflow orchestration, Alexa microservices.</span><span class="ru">Декомпозиция сложных систем, выявление неэффективностей, проектирование масштабируемых решений. Опыт масштаба Amazon — оркестрация рабочих процессов Prime Wardrobe, микросервисы Alexa.</span></p>
+      </div>
+
+      <div class="svc-card  -delay-1">
+        <div class="svc-icon">🔍</div>
+        <h3><span class="en">Engineering Process Audit</span><span class="ru">Аудит инженерных процессов</span></h3>
+        <p><span class="en">Identifying bottlenecks, quality gaps, and workflow inefficiencies. My QA/SDET background lets me see what others miss — and propose targeted, pragmatic improvements to CI/CD, testing, and delivery.</span><span class="ru">Выявление узких мест, пробелов в качестве и неэффективностей. Опыт QA/SDET позволяет замечать то, что другие упускают, и предлагать прагматичные улучшения CI/CD и процессов поставки.</span></p>
+      </div>
+      <div class="svc-card  -delay-2">
+        <div class="svc-icon">🤝</div>
+        <h3><span class="en">Team Effectiveness &amp; Scrum</span><span class="ru">Эффективность команды и Scrum</span></h3>
+        <p><span class="en">Coaching engineering teams on Scrum, Kanban, cross-team coordination, and communication. Experience setting up processes from scratch in new teams and performing the Scrum Master role.</span><span class="ru">Коучинг команд по Scrum, Kanban, координации и коммуникации. Опыт выстраивания процессов с нуля и роли Scrum-мастера.</span></p>
+      </div>
+      <div class="svc-card  -delay-3">
+        <div class="svc-icon">🌐</div>
+        <h3><span class="en">Full-Stack Development</span><span class="ru">Full-Stack разработка</span></h3>
+        <p><span class="en">End-to-end software delivery for small businesses and non-profits: React, React Native, Node.js, TypeScript, cloud deployment. From requirements to launch, SEO, and ongoing support.</span><span class="ru">Полный цикл разработки для малого бизнеса и НКО: React, React Native, Node.js, TypeScript, облачный деплой. От требований до запуска, SEO и поддержки.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERTISE ── -->
+<section id="expertise">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="en">Technical Expertise</span>
+      <span class="ru">Техническая экспертиза</span>
+    </div>
+    <h2 class="section-title">
+      <span class="en">Wide range, <em>deep roots</em></span>
+      <span class="ru">Широкий охват, <em>глубокие знания</em></span>
+    </h2>
+    <div style="margin-top:2rem;">
+        <div class="skill-group">
+          <div class="skill-group-title">// Languages</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">Ruby</span>
+            <span class="skill-tag">Bash</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">HTML / CSS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">// Frameworks &amp; Platforms</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">React Native</span>
+            <span class="skill-tag">Angular</span>
+            <span class="skill-tag">Spring / Guice</span>
+            <span class="skill-tag">J2EE</span>
+            <span class="skill-tag">Rails</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">// Cloud &amp; Infrastructure</div>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS EC2 / ECS / Lambda</span>
+            <span class="skill-tag">API Gateway</span>
+            <span class="skill-tag">DynamoDB</span>
+            <span class="skill-tag">S3 / RDS</span>
+            <span class="skill-tag">SNS / SQS</span>
+            <span class="skill-tag">ElasticSearch</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">GitHub Actions</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">// Databases</div>
+          <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Firebase Firestore</span>
+            <span class="skill-tag">Oracle</span>
+            <span class="skill-tag">GraphQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">// Domain Expertise</div>
+          <div class="skill-tags">
+            <span class="skill-tag amber-tag">FHIR / HL7 / EHR</span>
+            <span class="skill-tag amber-tag">HIPAA Compliance</span>
+            <span class="skill-tag amber-tag">Voice AI / Alexa</span>
+            <span class="skill-tag amber-tag">LLM Integration</span>
+            <span class="skill-tag amber-tag">QA / SDET</span>
+            <span class="skill-tag amber-tag">Scrum Master</span>
+            <span class="skill-tag amber-tag">WordPress / Shopify</span>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- ── APPROACH ── -->
+<section id="approach">
+  <div class="section-wrap">
+    <div class="approach-header">
+      <div class="section-label center">
+        <span class="en">Philosophy</span>
+        <span class="ru">Философия</span>
+      </div>
+      <h2>
+        <span class="en">How I think about every <em>engagement</em></span>
+        <span class="ru">Как я подхожу к каждому <em>проекту</em></span>
+      </h2>
+      <p class="en">Good consulting isn't about delivering a report. It's about leaving an organization genuinely better equipped to solve its own problems — with better tools, clearer thinking, and stronger teams.</p>
+      <p class="ru">Хороший консалтинг — это не просто отчёт. Это оставить организацию по-настоящему лучше подготовленной к решению собственных проблем — с лучшими инструментами, более ясным мышлением и более сильными командами.</p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar  -delay-1">
+        <span class="pillar-icon">🔭</span>
+        <div class="pillar-bar"></div>
+        <h3><span class="en">Global Picture First</span><span class="ru">Сначала — общая картина</span></h3>
+        <p><span class="en">I start with business context before touching technical details. The right solution depends entirely on what the organization is actually trying to achieve.</span><span class="ru">Я начинаю с бизнес-контекста, прежде чем касаться технических деталей. Правильное решение полностью зависит от того, чего организация на самом деле пытается достичь.</span></p>
+      </div>
+      <div class="pillar  -delay-2">
+        <span class="pillar-icon">❤️</span>
+        <div class="pillar-bar"></div>
+        <h3><span class="en">Empathy as a Tool</span><span class="ru">Эмпатия как инструмент</span></h3>
+        <p><span class="en">Understanding the humans in the system — engineers, managers, patients, customers — is not soft. It is the most reliable way to identify what is actually broken.</span><span class="ru">Понимание людей в системе — инженеров, менеджеров, пациентов, клиентов — это не мягкость. Это самый надёжный способ определить, что на самом деле сломано.</span></p>
+      </div>
+      <div class="pillar  -delay-3">
+        <span class="pillar-icon">🎯</span>
+        <div class="pillar-bar"></div>
+        <h3><span class="en">Intuition + Evidence</span><span class="ru">Интуиция + доказательства</span></h3>
+        <p><span class="en">15 years of pattern recognition means I often know where to look. But I validate every intuition with data, conversation, and structured analysis before recommending action.</span><span class="ru">15 лет распознавания паттернов означают, что я часто знаю, куда смотреть. Но я проверяю каждую интуицию данными и структурированным анализом.</span></p>
+      </div>
+      <div class="pillar  -delay-4">
+        <span class="pillar-icon">✍️</span>
+        <div class="pillar-bar"></div>
+        <h3><span class="en">Champion Good Ideas</span><span class="ru">Отстаивать хорошие идеи</span></h3>
+        <p><span class="en">I don't just identify problems — I advocate for the solutions I believe in. With clarity, writing, and persistence, I help organizations move past analysis paralysis into action.</span><span class="ru">Я не просто выявляю проблемы — я отстаиваю решения, в которые верю. С ясностью, письменным словом и настойчивостью помогаю организациям двигаться к действию.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-wrap">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="section-label">
+          <span class="en">Contact</span>
+          <span class="ru">Контакты</span>
+        </div>
+        <h2 class="section-title">
+          <span class="en">Let's start a <em>conversation</em></span>
+          <span class="ru">Начнём <em>разговор</em></span>
+        </h2>
+        <p class="en">Whether you have a specific challenge in mind or just want to explore what working together might look like, I'm happy to talk. No sales pitch — just an honest conversation about your situation.</p>
+        <p class="ru">Есть конкретная задача или просто хотите узнать, как могло бы выглядеть сотрудничество — я рада поговорить. Без продаж — просто честный разговор о вашей ситуации.</p>
+
+        <div class="contact-items">
+          <div class="contact-item" onclick="copyEmail()">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-label"><span class="en">Email</span><span class="ru">Email</span></div>
+              <div class="contact-value">tat.tokareva@gmail.com</div>
+            </div>
+          </div>
+          <div class="contact-item" onclick="window.open('https://t.me/ttokareva3','_blank')">
+            <div class="contact-icon">💬</div>
+            <div>
+              <div class="contact-label">Telegram</div>
+              <div class="contact-value">@ttokareva3</div>
+            </div>
+          </div>
+          <div class="contact-item" onclick="window.open('https://linkedin.com','_blank')">
+            <div class="contact-icon">💼</div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">linkedin.com/in/tatiana-tokareva</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label"><span class="en">Location</span><span class="ru">Местоположение</span></div>
+              <div class="contact-value"><span class="en">Redmond, WA, USA · Moscow, Russia</span><span class="ru">Редмонд, Вашингтон, США · Москва, Россия</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-right  -delay-2">
+        <div class="contact-form">
+          <h3>
+            <span class="en">Send a message</span>
+            <span class="ru">Написать сообщение</span>
+          </h3>
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label><span class="en">First Name</span><span class="ru">Имя</span></label>
+                <input type="text" id="fname" placeholder="Jane / Анна" required />
+              </div>
+              <div class="form-group">
+                <label><span class="en">Last Name</span><span class="ru">Фамилия</span></label>
+                <input type="text" id="lname" placeholder="Smith / Иванова" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label><span class="en">Email Address</span><span class="ru">Email</span></label>
+              <input type="email" id="femail" placeholder="you@company.com" required />
+            </div>
+            <div class="form-group">
+              <label><span class="en">Topic</span><span class="ru">Тема</span></label>
+              <select id="ftopic">
+                <option value=""><span class="en">Select…</span></option>
+                <option value="arch"><span class="en">Architecture &amp; System Design</span></option>
+                <option value="health">Healthcare Technology</option>
+                <option value="voice">Voice AI / LLM</option>
+                <option value="process"><span class="en">Engineering Process Audit</span></option>
+                <option value="team"><span class="en">Team Effectiveness</span></option>
+                <option value="dev"><span class="en">Full-Stack Development</span></option>
+                <option value="other"><span class="en">Other</span></option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label><span class="en">Message</span><span class="ru">Сообщение</span></label>
+              <textarea id="fmessage" placeholder="Tell me about your situation… / Расскажите о вашей ситуации…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit">
+              <span class="en">Send Message</span>
+              <span class="ru">Отправить</span>
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5h10M9 4l3.5 3.5L9 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="si">✅</div>
+            <h4><span class="en">Message received!</span><span class="ru">Сообщение получено!</span></h4>
+            <p><span class="en">Thank you for reaching out. I'll get back to you within one business day.</span><span class="ru">Спасибо за обращение. Я отвечу в течение одного рабочего дня.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Tatiana<span>.</span>Tokareva</div>
+    <p class="footer-copy">
+      <span class="en">© 2024 Tatiana Tokareva · Independent Technology Consultant</span>
+      <span class="ru">© 2024 Татьяна Токарева · Независимый технологический консультант</span>
+    </p>
+    <ul class="footer-links">
+      <li><a href="#about"><span class="en">About</span><span class="ru">Обо мне</span></a></li>
+      <li><a href="#services"><span class="en">Services</span><span class="ru">Услуги</span></a></li>
+      <li><a href="#contact"><span class="en">Contact</span><span class="ru">Контакты</span></a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- ── TOAST ── -->
+<div class="toast" id="toast">
+  <span>📋</span>
+  <span id="toastMsg">Copied!</span>
+</div>
+
+<!-- ── JAVASCRIPT ── -->
+<script>
+  // ── Language toggle ──
+  // Wrapped in try/catch so localStorage errors (file:// protocol, private mode)
+  // never break the rest of the script.
+  function setLang(lang) {
+    document.documentElement.setAttribute('data-lang', lang);
+    document.querySelectorAll('.lang-btn').forEach(function(b) {
+      b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang);
+    });
+    try { localStorage.setItem('lang', lang); } catch(e) {}
+  }
+  // Restore saved language (safe)
+  try {
+    var savedLang = localStorage.getItem('lang');
+    if (savedLang === 'ru' || savedLang === 'en') setLang(savedLang);
+  } catch(e) {}
+
+  // ── Navbar scroll ──
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Mobile nav ──
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.ml').forEach(l => {
+    l.addEventListener('click', () => {
+      navToggle.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
+  });
+
+  // ── Toast ──
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toastMsg').textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+
+  // ── Copy email ──
+  function copyEmail() {
+    const email = 'tat.tokareva@gmail.com';
+    navigator.clipboard.writeText(email)
+      .then(() => showToast('Copied: ' + email))
+      .catch(() => showToast('Email: ' + email));
+  }
+
+  // ── Contact form ──
+  document.getElementById('contactForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const fname = document.getElementById('fname').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const msg = document.getElementById('fmessage').value.trim();
+    const lang = document.documentElement.getAttribute('data-lang');
+
+    if (!fname || !email || !msg) {
+      showToast(lang === 'ru' ? 'Заполните обязательные поля' : 'Please fill in the required fields.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showToast(lang === 'ru' ? 'Введите корректный email' : 'Please enter a valid email address.');
+      return;
+    }
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = lang === 'ru' ? 'Отправка…' : 'Sending…';
+    btn.disabled = true;
+    setTimeout(() => {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      showToast(lang === 'ru' ? 'Сообщение отправлено!' : 'Message sent!');
+    }, 1200);
+  });
+
+  // ── Hero entrance ──
+  window.addEventListener('load', () => {
+    const hl = document.querySelector('.hero-left');
+    hl.style.cssText = 'opacity:0;transform:translateY(20px);transition:opacity 0.9s ease,transform 0.9s ease';
+    requestAnimationFrame(() => setTimeout(() => {
+      hl.style.opacity = '1'; hl.style.transform = 'translateY(0)';
+    }, 80));
+  });
+</script>
 </body>
 </html>
