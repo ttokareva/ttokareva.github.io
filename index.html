@@ -566,6 +566,70 @@
     .skill-tag.amber-tag:hover { background: var(--amber); border-color: var(--amber); color: #fff; }
 
     /* ============================================================
+       PROJECTS
+    ============================================================ */
+    #projects { padding: 7rem 0; position: relative; background: var(--bg-warm); }
+    #projects::after {
+      content: '04';
+      position: absolute; top: 3.5rem; right: 4rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 9rem; font-weight: 300;
+      color: rgba(45,90,74,0.06); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .proj-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem 1.5rem;
+      position: relative;
+      transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+      overflow: hidden;
+    }
+    .proj-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--green);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .proj-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+    .proj-card:hover::after { transform: scaleX(1); }
+    .proj-emoji { font-size: 1.75rem; margin-bottom: 0.85rem; display: block; }
+    .proj-card h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem; font-weight: 600;
+      color: var(--fg); margin-bottom: 0.35rem;
+      letter-spacing: -0.01em;
+    }
+    .proj-card h3 a {
+      color: inherit; text-decoration: none;
+      transition: color 0.2s;
+    }
+    .proj-card h3 a:hover { color: var(--green); }
+    .proj-url {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem; color: var(--amber-dark);
+      letter-spacing: 0.05em; margin-bottom: 0.85rem;
+      display: block;
+    }
+    .proj-card p { font-size: 0.84rem; color: var(--fg-muted); line-height: 1.7; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 1rem; }
+    .proj-tag {
+      background: rgba(45,90,74,0.07); border: 1px solid rgba(45,90,74,0.15);
+      border-radius: 100px; padding: 0.2rem 0.6rem;
+      font-size: 0.72rem; font-weight: 500; color: var(--green);
+    }
+    @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .projects-grid { grid-template-columns: 1fr; } }
+    /* ============================================================
        APPROACH / PILLARS
     ============================================================ */
     #approach {
@@ -791,6 +855,7 @@
         <li><a href="#about"><span class="en">About</span><span class="ru">Обо мне</span></a></li>
         <li><a href="#services"><span class="en">Services</span><span class="ru">Услуги</span></a></li>
         <li><a href="#expertise"><span class="en">Expertise</span><span class="ru">Экспертиза</span></a></li>
+        <li><a href="#projects"><span class="en">Projects</span><span class="ru">Проекты</span></a></li>
         <li><a href="#approach"><span class="en">Approach</span><span class="ru">Подход</span></a></li>
         <li><a href="#contact" class="nav-cta"><span class="en">Let's Talk</span><span class="ru">Связаться</span></a></li>
       </ul>
@@ -811,6 +876,7 @@
     <li><a href="#about" class="ml"><span class="en">About</span><span class="ru">Обо мне</span></a></li>
     <li><a href="#services" class="ml"><span class="en">Services</span><span class="ru">Услуги</span></a></li>
     <li><a href="#expertise" class="ml"><span class="en">Expertise</span><span class="ru">Экспертиза</span></a></li>
+    <li><a href="#projects" class="ml"><span class="en">Projects</span><span class="ru">Проекты</span></a></li>
     <li><a href="#approach" class="ml"><span class="en">Approach</span><span class="ru">Подход</span></a></li>
     <li><a href="#contact" class="ml"><span class="en">Let's Talk</span><span class="ru">Связаться</span></a></li>
   </ul>
@@ -1121,6 +1187,117 @@
     </div>
   </div>
 </section>
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="section-wrap">
+    <div class="section-label">
+      <span class="en">Personal Projects</span>
+      <span class="ru">Личные проекты</span>
+    </div>
+    <h2 class="section-title">
+      <span class="en">Building things I <em>believe in</em></span>
+      <span class="ru">Создаю то, в чём <em>верю</em></span>
+    </h2>
+    <p style="max-width:600px; color:var(--fg-muted); font-size:0.95rem; line-height:1.8; margin-top:1rem;">
+      <span class="en">Alongside client work, I build and maintain independent products — from wellness platforms to city exploration tools. These projects reflect my values: community, mindfulness, and the joy of local discovery.</span>
+      <span class="ru">Параллельно с клиентскими проектами я разрабатываю собственные продукты — от платформ для велнеса до инструментов для изучения города. Эти проекты отражают мои ценности: сообщество, осознанность и радость открытий.</span>
+    </p>
+    <div class="projects-grid">
+
+      <div class="proj-card">
+        <span class="proj-emoji">🧘</span>
+        <h3><a href="https://yogamap.co" target="_blank" rel="noopener">Yoga Aggregator</a></h3>
+        <span class="proj-url">yogamap.co</span>
+        <p>
+          <span class="en">A directory and aggregator for yoga studios, classes, and teachers. Helping practitioners find the right practice in their city.</span>
+          <span class="ru">Каталог и агрегатор йога-студий, классов и преподавателей. Помогает практикующим найти подходящую практику в своём городе.</span>
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">Node.js</span>
+          <span class="proj-tag">SEO</span>
+          <span class="proj-tag">Wellness</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-emoji">🌍</span>
+        <h3>OnePlanet</h3>
+        <p>
+          <span class="en">A platform connecting people around shared environmental and social values — fostering community action and global awareness.</span>
+          <span class="ru">Платформа, объединяющая людей вокруг общих экологических и социальных ценностей — для совместных действий и глобального осознания.</span>
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Community</span>
+          <span class="proj-tag">Social Impact</span>
+          <span class="proj-tag">Full-Stack</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-emoji">🚶</span>
+        <h3>City Walks</h3>
+        <p>
+          <span class="en">Curated urban walking routes for curious explorers. Discover neighbourhoods, hidden gems, and local stories on foot.</span>
+          <span class="ru">Подборка пешеходных маршрутов по городу для любопытных исследователей. Открывайте районы, скрытые места и локальные истории пешком.</span>
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Maps</span>
+          <span class="proj-tag">UX</span>
+          <span class="proj-tag">Local Discovery</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-emoji">🌆</span>
+        <h3>Moscow Evening Planner</h3>
+        <p>
+          <span class="en">A guide to evening events, venues, and experiences in Moscow — helping locals and visitors plan memorable nights out.</span>
+          <span class="ru">Путеводитель по вечерним мероприятиям, заведениям и впечатлениям в Москве — для жителей и гостей города.</span>
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Events</span>
+          <span class="proj-tag">Moscow</span>
+          <span class="proj-tag">Local Guide</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-emoji">🧘‍♀️</span>
+        <h3><a href="https://meditateinseattle.org" target="_blank" rel="noopener">Meditate in Seattle</a></h3>
+        <span class="proj-url">meditateinseattle.org</span>
+        <p>
+          <span class="en">A resource for the Seattle meditation community — listing classes, teachers, retreat centres, and mindfulness events across the city.</span>
+          <span class="ru">Ресурс для сиэтлского сообщества медитации — классы, учителя, ритриты и мероприятия по всему городу.</span>
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Meditation</span>
+          <span class="proj-tag">Seattle</span>
+          <span class="proj-tag">Wellness</span>
+          <span class="proj-tag">Community</span>
+        </div>
+      </div>
+
+
+      <div class="proj-card">
+        <span class="proj-emoji">🎉</span>
+        <h3>HappinessApp</h3>
+        <p>
+          <span class="en">A daily mood-booster that surfaces today’s fun holidays and quirky observances alongside cheerful tips and small rituals to brighten your day.</span>
+          <span class="ru">Ежедневный бустер настроения: сегодняшние весёлые праздники и необычные отметные даты вместе с советами и маленькими ритуалами, которые сделают ваш день ярче.</span>
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">React</span>
+          <span class="proj-tag">Wellness</span>
+          <span class="proj-tag">Daily Habits</span>
+          <span class="proj-tag">Fun</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── APPROACH ── -->
 <section id="approach">
   <div class="section-wrap">
