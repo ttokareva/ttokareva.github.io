@@ -1215,7 +1215,6 @@
       <div class="proj-card">
         <span class="proj-emoji">🧘</span>
         <h3><a href="https://yogamap.co" target="_blank" rel="noopener">Yoga Aggregator</a></h3>
-        <span class="proj-url">yogamap.co</span>
         <p>
           <span class="en">A directory and aggregator for yoga studios, classes, and teachers. Helping practitioners find the right practice in their city.</span>
           <span class="ru">Каталог и агрегатор йога-студий, классов и преподавателей. Помогает практикующим найти подходящую практику в своём городе.</span>
@@ -1231,7 +1230,6 @@
       <div class="proj-card">
         <span class="proj-emoji">🌍</span>
         <h3><a href="https://oneplanet.co" target="_blank" rel="noopener">OnePlanet</a></h3>
-        <span class="proj-url">oneplanet.co</span>
         <p>
           <span class="en">A platform connecting people around shared environmental and social values — fostering community action and global awareness.</span>
           <span class="ru">Платформа, объединяющая людей вокруг общих экологических и социальных ценностей — для совместных действий и глобального осознания.</span>
@@ -1246,7 +1244,6 @@
         <div class="proj-card">
         <span class="proj-emoji">🎉</span>
         <h3><a href="https://psychodraw.xyz" target="_blank" rel="noopener">PsychoTest</a></h3>
-        <span class="proj-url">psychodraw.xyz</span>
         <p>
           <span class="en">A drawing test with instant AI interpretation based on clinical projective psychology. Understand your emotions, fears, and strengths through the language of drawing.</span>
           <span class="ru">Тест на рисование с мгновенной интерпретацией с помощью ИИ, основанной на клинической проективной психологии. Понимайте свои эмоции, страхи и силы через язык рисования.</span>
@@ -1315,6 +1312,37 @@
           <span class="proj-tag">Wellness</span>
           <span class="proj-tag">Daily Habits</span>
           <span class="proj-tag">Fun</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-emoji">🪨</span>
+        <h3><a href="https://traveling-rock.com" target="_blank" rel="noopener">TravelingRock</a></h3>
+        <span class="proj-url">traveling-rock.com</span>
+        <p>
+          <span class="en">Paint a rock, give it a passport and travel diary, and pass it on by hand. Each rock's journey doubles as a small local cleanup, with AI-assisted litter logging and community impact stats.</span>
+          <span class="ru">Раскрасьте камень, заведите ему паспорт и дневник путешествий и передайте из рук в руки. Каждое путешествие камня — это ещё и небольшая уборка территории: учёт мусора с помощью ИИ и общая статистика вклада сообщества.</span>
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Cloudflare</span>
+          <span class="proj-tag">AI</span>
+          <span class="proj-tag">Environment</span>
+          <span class="proj-tag">Community</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <span class="proj-emoji">💞</span>
+        <h3><a href="https://datinginbellevue.com" target="_blank" rel="noopener">Dating In Bellevue</a></h3>
+        <span class="proj-url">datinginbellevue.com</span>
+        <p>
+          <span class="en">Hosted speed dating and social mixers for Bellevue singles, in person and on Zoom. Web portal with profiles, online booking and helpful tips for more efficient dating.</span>
+          <span class="ru">Быстрые свидания и вечеринки для одиноких людей в Белвью — вживую и в Zoom. Онлайн-портал с профилями, бронирование онлайн и полезные советы для более эффективных знакомств</span>
+        </p>
+        <div class="proj-tags">
+          <span class="proj-tag">Events</span>
+          <span class="proj-tag">Bellevue</span>
+          <span class="proj-tag">Community</span>
         </div>
       </div>
 
@@ -1421,24 +1449,24 @@
             <span class="en">Send a message</span>
             <span class="ru">Написать сообщение</span>
           </h3>
-          <form id="contactForm" novalidate>
+          <form id="contactForm" action="https://formspree.io/f/xyzyqqap" method="POST" novalidate>
             <div class="form-row">
               <div class="form-group">
                 <label><span class="en">First Name</span><span class="ru">Имя</span></label>
-                <input type="text" id="fname" placeholder="Jane / Анна" required />
+                <input type="text" id="fname" name="first_name" placeholder="Jane / Анна" required />
               </div>
               <div class="form-group">
                 <label><span class="en">Last Name</span><span class="ru">Фамилия</span></label>
-                <input type="text" id="lname" placeholder="Smith / Иванова" />
+                <input type="text" id="lname" name="last_name" placeholder="Smith / Иванова" />
               </div>
             </div>
             <div class="form-group">
               <label><span class="en">Email Address</span><span class="ru">Email</span></label>
-              <input type="email" id="femail" placeholder="you@company.com" required />
+              <input type="email" id="femail" name="email" placeholder="you@company.com" required />
             </div>
             <div class="form-group">
               <label><span class="en">Topic</span><span class="ru">Тема</span></label>
-              <select id="ftopic">
+              <select id="ftopic" name="topic">
                 <option value=""><span class="en">Select…</span></option>
                 <option value="arch"><span class="en">Architecture &amp; System Design</span></option>
                 <option value="health">Healthcare Technology</option>
@@ -1451,7 +1479,7 @@
             </div>
             <div class="form-group">
               <label><span class="en">Message</span><span class="ru">Сообщение</span></label>
-              <textarea id="fmessage" placeholder="Tell me about your situation… / Расскажите о вашей ситуации…" required></textarea>
+              <textarea id="fmessage" name="message" placeholder="Tell me about your situation… / Расскажите о вашей ситуации…" required></textarea>
             </div>
             <button type="submit" class="form-submit">
               <span class="en">Send Message</span>
@@ -1547,7 +1575,8 @@
   }
 
   // ── Contact form ──
-  document.getElementById('contactForm').addEventListener('submit', e => {
+  const contactForm = document.getElementById('contactForm');
+  contactForm.addEventListener('submit', async e => {
     e.preventDefault();
     const fname = document.getElementById('fname').value.trim();
     const email = document.getElementById('femail').value.trim();
@@ -1562,14 +1591,28 @@
       showToast(lang === 'ru' ? 'Введите корректный email' : 'Please enter a valid email address.');
       return;
     }
-    const btn = e.target.querySelector('.form-submit');
+
+    const btn = contactForm.querySelector('.form-submit');
+    const btnOriginal = btn.innerHTML;
     btn.textContent = lang === 'ru' ? 'Отправка…' : 'Sending…';
     btn.disabled = true;
-    setTimeout(() => {
-      document.getElementById('contactForm').style.display = 'none';
+
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!res.ok) throw new Error('Form submission failed');
+
+      contactForm.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
       showToast(lang === 'ru' ? 'Сообщение отправлено!' : 'Message sent!');
-    }, 1200);
+    } catch (err) {
+      showToast(lang === 'ru' ? 'Ошибка отправки. Попробуйте снова или напишите на email.' : 'Something went wrong. Please try again or email me directly.');
+      btn.innerHTML = btnOriginal;
+      btn.disabled = false;
+    }
   });
 
   // ── Hero entrance ──
