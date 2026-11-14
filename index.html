@@ -637,6 +637,45 @@
     }
     @media (max-width: 900px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .projects-grid { grid-template-columns: 1fr; } }
+
+    /* Past projects — collapsible compact list */
+    .past-projects { margin-top: 5rem; }
+    .past-projects summary {
+      cursor: pointer; list-style: none;
+      width: fit-content; margin-bottom: 0;
+      transition: color 0.2s;
+    }
+    .past-projects summary::-webkit-details-marker { display: none; }
+    .past-projects summary::after {
+      content: ''; width: 6px; height: 6px;
+      border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.25s ease;
+    }
+    .past-projects[open] summary::after { transform: rotate(-135deg) translateY(-2px); }
+    .past-projects summary:hover { color: var(--amber-dark); }
+    .past-count { color: var(--fg-light); }
+
+    .past-list {
+      list-style: none;
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 0 2.5rem; margin-top: 1.25rem;
+    }
+    .past-item {
+      display: flex; gap: 0.75rem; align-items: baseline;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .past-emoji { font-size: 1rem; flex-shrink: 0; }
+    .past-item h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--fg);
+    }
+    .past-item h4 a { transition: color 0.2s; }
+    .past-item h4 a:hover { color: var(--green); }
+    .past-item p { font-size: 0.82rem; color: var(--fg-muted); line-height: 1.6; margin-top: 0.15rem; }
+    @media (max-width: 760px) { .past-list { grid-template-columns: 1fr; } }
     /* ============================================================
        APPROACH / PILLARS
     ============================================================ */
@@ -1274,102 +1313,88 @@
 
     </div>
 
-    <div class="section-label" style="margin-top:5rem;">
+    <details class="past-projects">
+    <summary class="section-label">
       <span class="en">Past Projects</span>
       <span class="ru">Прошлые проекты</span>
-    </div>
-    <div class="projects-grid" style="margin-top:1.5rem;">
+      <span class="past-count">(10)</span>
+    </summary>
+    <ul class="past-list">
 
-      <div class="proj-card">
-        <span class="proj-emoji">🧘</span>
-        <h3><a href="https://yogamap.co" target="_blank" rel="noopener">Yoga Aggregator</a></h3>
-        <p>
-          <span class="en">A directory and aggregator for yoga studios, classes, and teachers. Helping practitioners find the right practice in their city.</span>
-          <span class="ru">Каталог и агрегатор йога-студий, классов и преподавателей. Помогает практикующим найти подходящую практику в своём городе.</span>
-        </p>
-        <div class="proj-tags">
-          <span class="proj-tag">React</span>
-          <span class="proj-tag">Node.js</span>
-          <span class="proj-tag">SEO</span>
-          <span class="proj-tag">Wellness</span>
+      <li class="past-item">
+        <span class="past-emoji">🧘</span>
+        <div>
+          <h4><a href="https://yogamap.co" target="_blank" rel="noopener">Yoga Aggregator</a></h4>
+          <p><span class="en">A directory of yoga studios, classes, and teachers, helping practitioners find the right practice in their city.</span><span class="ru">Каталог йога-студий, классов и преподавателей, помогающий найти подходящую практику в своём городе.</span></p>
         </div>
-      </div>
+      </li>
 
-      <div class="proj-card">
-        <span class="proj-emoji">🚶</span>
-        <h3>City Walks</h3>
-        <p>
-          <span class="en">Curated urban walking routes for curious explorers, mindfulness practitioners, and stress-relief seekers.</span>
-          <span class="ru">Подборка пешеходных маршрутов по городу для любопытных исследователей, практики осознанной ходьбы и антистресса.</span>
-        </p>
-        <div class="proj-tags">
-          <span class="proj-tag">Maps</span>
-          <span class="proj-tag">UX</span>
-          <span class="proj-tag">Local Discovery</span>
+      <li class="past-item">
+        <span class="past-emoji">🚶</span>
+        <div>
+          <h4>City Walks</h4>
+          <p><span class="en">Curated urban walking routes for curious explorers, mindfulness practitioners, and stress-relief seekers.</span><span class="ru">Подборка пешеходных маршрутов по городу для любопытных исследователей, практики осознанной ходьбы и антистресса.</span></p>
         </div>
-      </div>
+      </li>
 
-      <div class="proj-card">
-        <span class="proj-emoji">🎉</span>
-        <h3>HappinessApp</h3>
-        <p>
-          <span class="en">A daily mood-booster that surfaces today’s fun holidays and quirky observances alongside cheerful tips and small rituals to brighten your day.</span>
-          <span class="ru">Ежедневный бустер настроения: сегодняшние весёлые праздники и необычные отметные даты вместе с советами и маленькими ритуалами, которые сделают ваш день ярче.</span>
-        </p>
-        <div class="proj-tags">
-          <span class="proj-tag">React</span>
-          <span class="proj-tag">Wellness</span>
-          <span class="proj-tag">Daily Habits</span>
-          <span class="proj-tag">Fun</span>
+      <li class="past-item">
+        <span class="past-emoji">🎉</span>
+        <div>
+          <h4>HappinessApp</h4>
+          <p><span class="en">A daily mood-booster with today’s fun holidays and quirky observances, plus cheerful tips and small rituals.</span><span class="ru">Ежедневный бустер настроения: весёлые праздники и необычные даты, советы и маленькие ритуалы.</span></p>
         </div>
-      </div>
+      </li>
 
-      <div class="proj-card">
-        <span class="proj-emoji">🌆</span>
-        <h3>Moscow Evening Planner</h3>
-        <p>
-          <span class="en">A guide to evening events, venues, and experiences in Moscow — helping locals and visitors plan memorable nights out.</span>
-          <span class="ru">Путеводитель по вечерним мероприятиям, заведениям и впечатлениям в Москве — для жителей и гостей города.</span>
-        </p>
-        <div class="proj-tags">
-          <span class="proj-tag">Events</span>
-          <span class="proj-tag">Moscow</span>
-          <span class="proj-tag">Local Guide</span>
+      <li class="past-item">
+        <span class="past-emoji">🌆</span>
+        <div>
+          <h4>Moscow Evening Planner</h4>
+          <p><span class="en">A guide to evening events, venues, and experiences in Moscow for locals and visitors.</span><span class="ru">Путеводитель по вечерним мероприятиям, заведениям и впечатлениям в Москве для жителей и гостей города.</span></p>
         </div>
-      </div>
+      </li>
 
-      <div class="proj-card">
-        <span class="proj-emoji">🧘‍♀️</span>
-        <h3><a href="https://meditateinseattle.org" target="_blank" rel="noopener">Meditate in Seattle</a></h3>
-        <span class="proj-url">meditateinseattle.org</span>
-        <p>
-          <span class="en">A resource for the Seattle meditation community — listing classes, teachers, retreat centres, and mindfulness events across the city.</span>
-          <span class="ru">Ресурс для сиэтлского сообщества буддийской медитации — классы, учителя, ритриты и мероприятия.</span>
-        </p>
-        <div class="proj-tags">
-          <span class="proj-tag">Meditation</span>
-          <span class="proj-tag">Seattle</span>
-          <span class="proj-tag">Wellness</span>
-          <span class="proj-tag">Community</span>
+      <li class="past-item">
+        <span class="past-emoji">🧘‍♀️</span>
+        <div>
+          <h4><a href="https://meditateinseattle.org" target="_blank" rel="noopener">Meditate in Seattle</a></h4>
+          <p><span class="en">A resource for the Seattle meditation community: classes, teachers, retreat centres, and mindfulness events.</span><span class="ru">Ресурс для сиэтлского сообщества медитации: классы, учителя, ритриты и мероприятия.</span></p>
         </div>
-      </div>
+      </li>
 
-      <div class="proj-card">
-        <span class="proj-emoji">✨</span>
-        <h3>Charisma</h3>
-        <p>
-          <span class="en">An early-stage startup where I was technical lead: a multi-language platform that promotes healthy habits and lifestyle through educational courses and engaging practical tasks and challenges, built and launched from MVP.</span>
-          <span class="ru">Стартап на ранней стадии, где я была техническим руководителем: многоязычная платформа, которая продвигает здоровые привычки и образ жизни с помощью образовательных курсов, увлекательных практических заданий и челленджей. Прошла путь от MVP до запуска.</span>
-        </p>
-        <div class="proj-tags">
-          <span class="proj-tag">Angular</span>
-          <span class="proj-tag">Firebase</span>
-          <span class="proj-tag">Node.js</span>
-          <span class="proj-tag">Education</span>
+      <li class="past-item">
+        <span class="past-emoji">✨</span>
+        <div>
+          <h4>Charisma</h4>
+          <p><span class="en">Early-stage startup where I was technical lead: a multi-language platform that promotes healthy habits and lifestyle through educational courses and engaging practical tasks and challenges, built and launched from MVP.</span><span class="ru">Стартап на ранней стадии, где я была техническим руководителем: многоязычная платформа, которая продвигает здоровые привычки и образ жизни с помощью образовательных курсов, практических заданий и челленджей. От MVP до запуска.</span></p>
         </div>
-      </div>
+      </li>
 
-    </div>
+      <li class="past-item">
+        <span class="past-emoji">🎼</span>
+        <div>
+          <h4><span class="en">Composer Portfolio</span><span class="ru">Портфолио композитора</span></h4>
+          <p><span class="en">Portfolio website for a composer, musician, and multimedia performer working in abstractionism and suprematism.</span><span class="ru">Сайт-портфолио для композитора, музыканта и мультимедийного артиста, работающего в стиле абстракционизма и супрематизма.</span></p>
+        </div>
+      </li>
+
+      <li class="past-item">
+        <span class="past-emoji">🌿</span>
+        <div>
+          <h4>Silachi</h4>
+          <p><span class="en">Small business website for a reiki and energy practitioner.</span><span class="ru">Сайт для практика рейки и энергетических практик.</span></p>
+        </div>
+      </li>
+
+      <li class="past-item">
+        <span class="past-emoji">🎨</span>
+        <div>
+          <h4><span class="en">Esoteric Art Store</span><span class="ru">Магазин эзотерического искусства</span></h4>
+          <p><span class="en">Online store for a local esoteric artist, with vibrant colors that frame and highlight the artworks.</span><span class="ru">Интернет-магазин местного эзотерического художника с яркими цветами, подчёркивающими работы.</span></p>
+        </div>
+      </li>
+
+    </ul>
+    </details>
   </div>
 </section>
 
